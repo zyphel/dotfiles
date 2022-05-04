@@ -12,6 +12,7 @@
 " ============
 
 set nocompatible
+filetype plugin indent on
 syntax enable
 
 set clipboard=unnamedplus " copy to system clipboard
@@ -119,4 +120,4 @@ nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " ===== Esc
-inoremap jj <Esc>
+inoremap jk <Esc>
