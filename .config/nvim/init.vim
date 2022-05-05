@@ -120,4 +120,4 @@ nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " ===== Esc
-inoremap jk <Esc>
+inoremap jj <Esc>
