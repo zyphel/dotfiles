@@ -1,6 +1,4 @@
-# ==========
-#  i3config
-# ==========
+##### i3config #####
 
 exec --no-startup-id ~/set_once_i3.sh
 
