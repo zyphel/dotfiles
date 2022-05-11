@@ -248,14 +248,14 @@ set $ws9 "9"
 set $ws10 "10"
 
 # bind program to workspace and focus to them on startup:
-assign [class="(?i)firefox"] $ws10
 assign [class="Thunderbird"] $ws3
 assign [class="(?i)pcmanfm"] $ws4
 assign [class="(?i)bitwarden"] $ws5
 assign [class="obsidian"] $ws5
-assign [class="(?i)freetube"] $ws6
-assign [class="discord"] $ws7
+assign [class="discord"] $ws6
 assign [class="(?i)steam"] $ws8
+assign [class="(?i)freetube"] $ws9
+assign [class="(?i)firefox"] $ws10
 
 # automatic set focus new window if it opens on another workspace then the current:
 #for_window [class=(?i)firefox] focus
