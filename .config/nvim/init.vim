@@ -1,8 +1,4 @@
-""""" init.vim """""
-
-" ============
-" Vim Settings
-" ============
+" init.vim
 
 set nocompatible
 filetype plugin indent on
@@ -44,6 +40,7 @@ call plug#end()
 " ===============
 
 " ===== Airline theme
+"let g:airline_theme='base16_monokai'
 let g:airline_theme='base16_gruvbox_dark_hard'
 
 " ===== vimtex 
