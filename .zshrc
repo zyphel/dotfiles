@@ -40,6 +40,8 @@ lfcd () {
 # fzf - open file in vim
 bindkey -s '^o' 'nvim $(fzf)^M'
 
+alias ..='cd ..'
+alias ...='cd ../..'
 alias cm='cmatrix -u 10'
 alias ct='crontab -e'
 alias aconf='nvim ~/.config/alacritty/alacritty.yml'
@@ -57,7 +59,7 @@ alias fe='cd ~/Dropbox/LaTeX/fe-draft/ && ls'
 alias latex='cd ~/Dropbox/LaTeX'
 alias lf='lfcd'
 alias lsblk='lsblk -e 7'
-alias n='cd ~/Dropbox/notes'
+alias n='cd ~/Dropbox/notes && clear'
 alias nf='neofetch'
 alias q='exit'
 alias rm='rm -i' # make rm safe - will ask are you sure?
