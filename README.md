@@ -1,3 +1,3 @@
 # dotfiles
 
-This is a repository for my dotfiles. 
+A repository for dotfiles. 
