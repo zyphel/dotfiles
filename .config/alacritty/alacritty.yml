@@ -1,8 +1,7 @@
 ##### alacritty.yml #####
 
-# -------------------------------------------------
 # Switch themes with 'alacritty-themes' in terminal
-# -------------------------------------------------
+
 window:
   padding:
     x: 10
@@ -31,11 +30,11 @@ font:
     family: SF Mono Powerline
     style: BoldItalic
 
-  # Point size
+# Point size
   size: 14
 
 # ----------------------------
-# ----------------------------
+
 selection:
   save_to_clipboard: false
 
