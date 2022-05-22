@@ -256,7 +256,7 @@ assign [class="(?i)freetube"] $ws9
 assign [class="(?i)firefox"] $ws10
 
 # automatic set focus new window if it opens on another workspace then the current:
-#for_window [class=(?i)firefox] focus
+for_window [class=(?i)firefox] focus
 for_window [class=Thunderbird] focus
 #for_window [class=(?i)pcmanfm] focus
 for_window [class=(?i)bitwarden] focus
