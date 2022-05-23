@@ -1,11 +1,16 @@
-# Terminal Apps
+# Terminal Apps and Functionality
+
+&
+	add "&" at the end of application name
+	e.g., "firefox &"
+	allows you to close terminal while app remains open
 
 alacritty-themes
 	terminal theme stitcher
 
 ag
 ag 'search-terms' w
-	search program 
+	search application
 
 biber --tool --validate-datamodel ~/Dropbox/LaTeX/references.bib
 	validate bibtex files
@@ -26,6 +31,9 @@ cmus
 corectrl
 	many functions, I use it to look at the temp
 
+ctrl+l
+	equivalent to "clear"
+
 du
 	default app for disk usage 
 
@@ -42,7 +50,7 @@ fc-list | grep -i <name>
 	search for specific font
 
 figlet
-figlet jeff + beth | pv -qL 20 | lolcat
+figlet word or phrase | pv -qL 20 | lolcat
 	display text in terminal
 
 fslint
@@ -60,14 +68,14 @@ htop
 	real time sys info
 
 jrnl 
-	simple journaling app
+	terminal journaling app
 
 lfcd
 	file navigation
 
 lolcat
 	Terminal rainbows
-	Can be used with figlet. See example below.
+	Can be used with figlet
 
 lsusb
 	usb drive
@@ -98,7 +106,7 @@ pacman -Rndd pkg-name
     -dd so it would remove itself but not the things that depended on it (i.e. the rest of the gnome apps I had installed)
 
 pacman -Si pkg-name
-	detailed info about app
+	detailed app info
 
 pfetch
 	sys info
@@ -115,7 +123,7 @@ sensors
 	temperature display
 
 speedread
-	helps you practice reading fast
+	practice speed reading 
 
 taskwarrior
 	tasks 
@@ -124,7 +132,6 @@ taskwarrior
 
 tldr
 	brief summary of application
-	very nice
 
 trash.cli
 	trash management
@@ -133,8 +140,8 @@ vit
 	taskwarrior frontend, vim functionality
 
 xclip
-	The only system-wide clipboard that worked in i3wm. 
-	I tried ~5 of them. All failed but xclip. Long live xclip!
+	The system-wide clipboard that worked for me in i3wm
+	I tried ~5 of them. All failed but xclip. 
 
 xprop
 	dsiplay system information with a click
@@ -149,7 +156,6 @@ ranger
 
 yadm
 	yet another dotfiles manager
-	in the following order...
 	yadm pull
 	yadm add <file(s)>
 	yadm commit
@@ -160,8 +166,3 @@ zathura file.xxx
 
 zentile
 	tiling window manager for xfce
-
-# Shortcuts
-
-Ctrl+l
-	comment: equivalent to cd, Enter
