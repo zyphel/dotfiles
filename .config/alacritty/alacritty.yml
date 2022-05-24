@@ -1,7 +1,8 @@
 ##### alacritty.yml #####
 
+# -------------------------------------------------
 # Switch themes with 'alacritty-themes' in terminal
-
+# -------------------------------------------------
 window:
   padding:
     x: 10
@@ -15,7 +16,7 @@ scrolling:
   history: 10000
   multiplier: 3
 
-# Fonts here (fav is SF Mono Powerline)
+# ----------------------------
 font:
   normal:
     family: SF Mono Powerline
@@ -30,11 +31,10 @@ font:
     family: SF Mono Powerline
     style: BoldItalic
 
-# Point size
+  # Point size
   size: 14
 
 # ----------------------------
-
 selection:
   save_to_clipboard: false
 
@@ -47,6 +47,8 @@ key_bindings:
       mods: Super|Shift,
       action: SpawnNewInstance
     }
+
+# ----- Alacritty adds theme info last...
 colors:
   # Default colors
   primary:
