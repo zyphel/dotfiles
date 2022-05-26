@@ -5,12 +5,12 @@
 	e.g., "firefox &"
 	allows you to close terminal while app remains open
 
-alacritty-themes
-	terminal theme stitcher
-
 ag
 ag 'search-terms' w
 	search application
+
+alacritty-themes
+	terminal theme stitcher
 
 biber --tool --validate-datamodel ~/Dropbox/LaTeX/references.bib
 	validate bibtex files
@@ -116,6 +116,10 @@ powertop
 
 quickemu
 	emulator, word on the street is it's much easier than VirtualBox
+
+rg
+	ripgrep is a recursive line-oriented CLI search tool
+	faster alternative to grep
 
 screenfetch
 
