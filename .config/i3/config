@@ -1,11 +1,4 @@
-##### i3config #####
-
 exec --no-startup-id ~/set_once_i3.sh
-
-# https://github.com/endeavouros-team/endeavouros-i3wm-setup
-
-# font icon search: https://fontawesome.com/v4.7/cheatsheet/
-# font icon search: https://www.nerdfonts.com/cheat-sheet
 
 # -------------------------
 # configuration begins here
@@ -35,12 +28,16 @@ workspace_layout default
 # extra options for windows
 # -------------------------
 
+# fullscreen no gaps (smart_gaps on)
+hide_edge_borders smart
+
 #border indicator on windows:
 new_window pixel 1
 
 # Set inner/outer gaps
 gaps inner 4
 gaps outer 2
+smart_gaps on
 
 # show window title bars (not officially supported with i3gaps)
 default_border pixel 1
