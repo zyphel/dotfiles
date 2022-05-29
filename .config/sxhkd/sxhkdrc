@@ -1,18 +1,16 @@
 mod1 + Escape
 	pkill -USR1 -x sxhkd
 
-mod1 + Return
-	alacritty
-
 mod1 + q
 	i3-msg kill
 
-# Launcher
+# APPLICATIONS
 
 mod1 + d
 	rofi -show run
 
-# Applications 
+mod1 + Return
+	alacritty
 
 mod1 + b
 	firefox
@@ -20,7 +18,7 @@ mod1 + b
 mod1 + n
 	pcmanfm
 
-# Movement
+# MOVEMENT
 
 mod1 + {z,x}
     i3-msg split {v,h}
@@ -37,7 +35,7 @@ mod1 + f
 mod1 + shift + space
     i3-msg floating toggle
 
-# Floating
+# FLOATING
 
 mod1 + shift + space
     i3-msg floating toggle
@@ -48,7 +46,7 @@ mod1 + super + space
 mod1 + a
     i3-msg focus parent
 
-# Workspaces
+# WORKSPACES
 
 mod1 + {1-9,0}
 	i3-msg workspace {1-9,10}
