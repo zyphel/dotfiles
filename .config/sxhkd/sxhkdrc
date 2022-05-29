@@ -9,7 +9,7 @@ mod1 + q
 
 # Launcher
 
-mod1 + space
+mod1 + d
 	rofi -show run
 
 # Applications 
@@ -22,13 +22,39 @@ mod1 + n
 
 # Movement
 
-# Workspaces
+mod1 + {z,x}
+    i3-msg split {v,h}
 
-mod1 + {1-9,0}
-	i3-msg workspace {1-9,10}
+mod1 + {h,j,k,l}
+    i3-msg focus {left,down,up,right}
+
+mod1 + shift + {h,j,k,l}
+    i3-msg move {left,down,up,right}
 
 mod1 + f
 	i3-msg fullscreen toggle
 
 mod1 + shift + space
     i3-msg floating toggle
+
+# Floating
+
+mod1 + shift + space
+    i3-msg floating toggle
+
+mod1 + super + space
+    i3-msg focus mode_toggle
+
+mod1 + a
+    i3-msg focus parent
+
+# Workspaces
+
+mod1 + {1-9,0}
+	i3-msg workspace {1-9,10}
+
+mod1 + shift+{1-9}
+    i3-msg move container to workspace number {1-9}
+
+mod1 + ctrl + {h,j,k,l}
+    i3-msg resize {grow width 1 px or 1 ppt, shrink height 1 px or 1 ppt, grow height 1 px or 1 ppt, shrink width 1 px or 1 ppt}
