@@ -6,7 +6,7 @@ mod1 + q
 
 # APPLICATIONS
 
-mod1 + d
+mod1 + space
 	rofi -show run
 
 mod1 + Return
