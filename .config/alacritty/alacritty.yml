@@ -16,23 +16,30 @@ scrolling:
   history: 10000
   multiplier: 3
 
-# ----------------------------
 font:
+  size: 14.5
+  offset:
+    y: 1
   normal:
-    family: SF Mono Powerline
-    style: Regular
-  bold:
-    family: SF Mono Powerline
-    style: Bold
-  italic:
-    family: SF Mono Powerline
-    style: MediumItalic
-  bold_italic:
-    family: SF Mono Powerline
-    style: BoldItalic
+   family: "SF Mono Powerline"
 
-  # Point size
-  size: 14
+    # # ----------------------------
+    # font:
+    #   normal:
+    #     family: SF Mono Powerline
+    #     style: Regular
+    #   bold:
+    #     family: SF Mono Powerline
+    #     style: Bold
+    #   italic:
+    #     family: SF Mono Powerline
+    #     style: MediumItalic
+    #   bold_italic:
+    #     family: SF Mono Powerline
+    #     style: BoldItalic
+    # 
+    #   # Point size
+    #   size: 14
 
 # ----------------------------
 selection:
