@@ -1,8 +1,7 @@
-##### alacritty.yml #####
+##### alacritty.yml
 
-# -------------------------------------------------
 # Switch themes with 'alacritty-themes' in terminal
-# -------------------------------------------------
+
 window:
   padding:
     x: 10
@@ -17,31 +16,11 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 14.5
+  size: 14
   offset:
     y: 1
   normal:
-   family: "SF Mono Powerline"
-
-    # # ----------------------------
-    # font:
-    #   normal:
-    #     family: SF Mono Powerline
-    #     style: Regular
-    #   bold:
-    #     family: SF Mono Powerline
-    #     style: Bold
-    #   italic:
-    #     family: SF Mono Powerline
-    #     style: MediumItalic
-    #   bold_italic:
-    #     family: SF Mono Powerline
-    #     style: BoldItalic
-    # 
-    #   # Point size
-    #   size: 14
-
-# ----------------------------
+    family: "SF Mono Powerline"
 selection:
   save_to_clipboard: false
 
