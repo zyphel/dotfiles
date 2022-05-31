@@ -1,6 +1,6 @@
 ##### .zshrc #####
 
-export TERMINAL=alacritty
+export TERMINAL=kitty
 export EDITOR=/usr/bin/nvim
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' # Ignore case completion
 
@@ -48,6 +48,7 @@ alias aconf='nvim ~/.config/alacritty/alacritty.yml'
 alias btm='btm --color gruvbox'
 alias iconf='nvim ~/.config/i3/config'
 alias jconf='nvim ~/.config/jrnl/jrnl.yaml'
+alias kconf='nvim ~/.config/kitty/kitty.conf'
 alias pconf='nvim ~/.config/polybar/config.ini'
 alias rconf='nvim ~/.config/rofi/config.rasi'
 alias sconf='nvim ~/.config/starship.toml'
