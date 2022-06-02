@@ -186,8 +186,8 @@ bar {
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status \
-        -m memory cpu date time \
-		-p memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
+        -m weather memory cpu date time system \
+		-p weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
 

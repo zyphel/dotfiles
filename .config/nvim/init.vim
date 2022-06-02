@@ -1,5 +1,3 @@
-""""" init.vim """""
-
 set nocompatible
 filetype plugin indent on
 syntax enable
@@ -26,8 +24,10 @@ Plug 'vim-airline/vim-airline' " vim status bar
 Plug 'vim-airline/vim-airline-themes' " install airline themes
 Plug 'jiangmiao/auto-pairs' " closes pairs
 Plug 'chrisbra/Colorizer' " color preview
+Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf.vim' " fuzzy find
 Plug 'junegunn/goyo.vim' " writing environment
+Plug 'ptzz/lf.vim'
 Plug 'farmergreg/vim-lastplace' " return to last place in file
 Plug 'preservim/vim-pencil'
 Plug 'tpope/vim-sensible'
