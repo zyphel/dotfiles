@@ -9,9 +9,9 @@
     background-color:           #101010;
     border-color:               #282c34;
     text-color:                 #bbc2cf;
-    height:                     24px;
-    font:                       "SauceCodePro Nerd Font Mono 10";
-    prompt-font:                "Ubuntu Bold 10";
+    height:                     23px;
+    font:                       "SF Mono Powerline 10";
+    prompt-font:                "SF Mono Powerline 10";
     prompt-background:          #51afef;
     prompt-foreground:          #282c34;
     prompt-padding:             3px;

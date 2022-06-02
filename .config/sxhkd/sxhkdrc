@@ -21,8 +21,20 @@ mod1 + Return
 mod1 + b
 	firefox
 
+mod1 + o
+	obsidian
+
 mod1 + n
 	pcmanfm
+
+mod1 + t
+	freetube
+
+mod1 + e
+	steam
+
+mod1 + d
+	discord
 
 ##### MOVEMENT
 
