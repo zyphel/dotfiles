@@ -80,16 +80,18 @@ assign [class="Thunderbird"] $ws3
 assign [class="(?i)pcmanfm"] $ws4
 assign [class="(?i)bitwarden"] $ws5
 assign [class="obsidian"] $ws5
-assign [class="discord"] $ws6
+assign [class="Solaar"] $ws6
+assign [class="discord"] $ws7
 assign [class="(?i)steam"] $ws8
 assign [class="(?i)freetube"] $ws9
 assign [class="(?i)firefox"] $ws10
 
 # set auto-focus 
-for_window [class=(?i)firefox] focus
 for_window [class=Thunderbird] focus
 for_window [class=(?i)bitwarden] focus
+for_window [class=(?i)Solaar] focus
 for_window [class=(?i)discord] focus
+for_window [class=(?i)firefox] focus
 
 ##### TRANSPARENCY
 

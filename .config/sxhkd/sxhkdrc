@@ -18,8 +18,8 @@ mod1 + space
 mod1 + Return
 	kitty
 
-mod1 + b
-	firefox
+mod1 + d
+	discord
 
 mod1 + o
 	obsidian
@@ -27,14 +27,14 @@ mod1 + o
 mod1 + n
 	pcmanfm
 
-mod1 + t
-	freetube
-
 mod1 + m
 	steam
 
-mod1 + d
-	discord
+mod1 + t
+	freetube
+
+mod1 + b
+	firefox
 
 ##### MOVEMENT
 
