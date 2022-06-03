@@ -4,6 +4,7 @@ set hidden true
 set ignorecase true
 set scrolloff 10
 
+# MAPS
 map <delete> trash
 
 # CUSTOM FUNCTIONS
