@@ -22,9 +22,6 @@ gaps inner 4
 gaps outer 2
 smart_gaps on
 
-# show window title bars (not officially supported with i3gaps)
-#default_border pixel 1
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -100,6 +97,9 @@ exec_always --no-startup-id picom --vsync
 ##### AUTOSTART
 
 exec_always sxhkd
+
+# https://github.com/nwg-piotr/autotiling
+exec_always --no-startup-id autotiling
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

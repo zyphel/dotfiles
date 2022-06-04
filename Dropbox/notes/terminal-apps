@@ -12,6 +12,10 @@ ag 'search-terms' w
 alacritty-themes
 	terminal theme stitcher
 
+autotiling
+	https://github.com/nwg-piotr/autotiling
+	switch layout depending on focused window dimensions
+
 biber --tool --validate-datamodel ~/Dropbox/LaTeX/references.bib
 	validate bibtex files
 
