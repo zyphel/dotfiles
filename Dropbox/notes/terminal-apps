@@ -121,6 +121,12 @@ powertop
 quickemu
 	emulator, word on the street is it's much easier than VirtualBox
 
+rename
+	rename multiple files
+
+rename -a ' ' '-' *
+	replaces space with dash in all
+
 rg
 	ripgrep is a recursive line-oriented CLI search tool
 	faster alternative to grep
@@ -139,7 +145,8 @@ taskwarrior
 	see: vit
 
 tldr
-	brief summary of application
+	brief application summary 
+	examples often provided
 
 trash.cli
 	trash management

@@ -1,19 +1,10 @@
 # BASIC SETTINGS
-
-set hidden false
+set hidden true
 set ignorecase true
 set scrolloff 10
-#set drawbox
-
-# LF IMAGE PREVIEWER
-set previewer ~/.config/lf/lf_kitty_preview
-set cleaner ~/.config/lf/lf_kitty_clean
-
-# MAPS
-map <delete> trash
 
 # CUSTOM FUNCTIONS
-
+# example: type "$" then "mkdir" will create director
 cmd mkdir ${{
 	printf "Directory Name: "
 	read ans
@@ -37,3 +28,4 @@ cmd open ${{
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+
