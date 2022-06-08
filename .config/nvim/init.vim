@@ -1,4 +1,4 @@
-# ===== init.vim
+" ===== init.vim
 
 set nocompatible
 filetype plugin indent on
