@@ -1,3 +1,5 @@
+# ===== i3/config
+
 exec --no-startup-id ~/set_once_i3.sh
 
 font pango: monospace 10

@@ -1,4 +1,4 @@
-##### .zshrc #####
+# ===== zshrc
 
 export TERMINAL=kitty
 export EDITOR=/usr/bin/nvim
