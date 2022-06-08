@@ -1,8 +1,13 @@
 # BASIC SETTINGS
 
-set hidden true
+set hidden false
 set ignorecase true
 set scrolloff 10
+#set drawbox
+
+# LF IMAGE PREVIEWER
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
 
 # MAPS
 map <delete> trash

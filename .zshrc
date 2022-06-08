@@ -1,6 +1,7 @@
 # ===== zshrc
 
 export TERMINAL=kitty
+export RANGER_LOAD_DEFAULT_RC=false
 export EDITOR=/usr/bin/nvim
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' # Ignore case completion
 

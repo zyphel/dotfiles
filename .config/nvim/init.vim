@@ -113,3 +113,4 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " ===== Esc
 inoremap jj <Esc>
+inoremap JJ <Esc>
