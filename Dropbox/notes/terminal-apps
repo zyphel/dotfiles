@@ -158,6 +158,10 @@ xclip
 	The system-wide clipboard that worked for me in i3wm
 	I tried ~5 of them. All failed but xclip. 
 
+xset
+	xset r rate 200 25
+	sets keyboard repeat rate
+
 xprop
 	dsiplay system information with a click
 
