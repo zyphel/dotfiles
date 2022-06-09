@@ -131,7 +131,9 @@ rg
 	ripgrep is a recursive line-oriented CLI search tool
 	faster alternative to grep
 
-screenfetch
+screenfetch (system info)
+	display system information
+	much like neofetch
 
 sensors
 	temperature display
