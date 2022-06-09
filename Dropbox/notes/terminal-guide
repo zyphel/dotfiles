@@ -161,8 +161,10 @@ xclip
 	I tried ~5 of them. All failed but xclip. 
 
 xset
-	xset r rate 200 25
 	sets keyboard repeat rate
+	xset r rate 300 25
+	'rate <number>' = milliseconds of keyboard delay
+	default delay rate is '660'
 
 xprop
 	dsiplay system information with a click
