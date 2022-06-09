@@ -98,6 +98,9 @@ exec_always --no-startup-id picom --vsync
 
 # ===== AUTOSTART
 
+# xset for keyboard repeat rate
+exec xset r rate 300 25
+
 exec_always sxhkd
 
 # https://github.com/nwg-piotr/autotiling
