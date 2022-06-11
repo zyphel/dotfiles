@@ -1,4 +1,4 @@
-##### alacritty.yml
+# ===== alacritty.yml
 
 # Switch themes with 'alacritty-themes' in terminal
 
@@ -16,11 +16,11 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 14
+  size: 13.5
   offset:
     y: 1
   normal:
-    family: "SF Mono Powerline"
+    family: "IBM Plex Mono"
 selection:
   save_to_clipboard: false
 
