@@ -1,9 +1,9 @@
-# Cut
+## Cut
 c		cut
 caw		change all word (grabs whitespace)
 ciw		change in word (just word, no whitespace)
 
-# Delete
+## Delete
 d		delete
 dl		delete character (alias: "x")
 diw		delete inner word
@@ -21,7 +21,18 @@ dap		delete a paragraph
 diB		delete inner '{' '}' block
 daB		delete a '{' '}' block
 
-# Macros
+## Fold Create
+
+
+
+## Fold Manipulate
+
+za
+zo			open fold at the cursor
+z+Shift+o
+zc			close fold at the cursor
+
+## Macros
 Record a macro
 	q{register}
 	{do things}
@@ -30,14 +41,14 @@ Record a macro
 Play macro
 	@{register}
 
-# Motions
+## Motions
 a		all
 i		in
 t		'til
 f		find forward
 F		find backward
 
-# Movement (^ = control)
+## Movement (^ = control)
 
 gg		jump to beginning of file
 G		jump to end of file
@@ -51,16 +62,16 @@ H		move to top of screen
 M		move to middle of screen
 L		move to bottom of screen
 
-# Tags
+## Tags
 t		tags (xml/html files)
 
-# Text Objects
+## Text Objects
 w		words
 s		sentences
 p		paragraphs
 
-# Visual
+## Visual
 v		visually select
 
-# Yank (copy)
+## Yank (copy)
 y		yank

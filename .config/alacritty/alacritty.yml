@@ -16,25 +16,26 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 13.5
+  size: 14.5
   offset:
-    y: 1
+    x: 0
+    y: 0
   normal:
-    family: "IBM Plex Mono"
+    family: "Code New Roman"
 selection:
   save_to_clipboard: false
 
 shell:
   program: /usr/bin/zsh
 
-key_bindings:
-  - {
-      key: Return,
-      mods: Super|Shift,
-      action: SpawnNewInstance
-    }
+    #key_bindings:
+    #  - {
+    #      key: Return,
+    #      mods: Super|Shift,
+    #      action: SpawnNewInstance
+    #    }
 
-# ----- Alacritty adds theme info last...
+# ===== Alacritty adds theme info last
 colors:
   # Default colors
   primary:

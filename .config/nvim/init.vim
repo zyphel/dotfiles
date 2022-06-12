@@ -107,7 +107,8 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']"noremap <leader>f :FZF<cr>
 noremap <leader>g :Goyo 60<cr>
 noremap <leader>p :SoftPencil<cr>
 
-" ===== Spelling toggle with F11 (https://jdhao.github.io/2019/04/29/nvim_spell_check/)
+" ===== Spelling toggle with F11 
+" https://jdhao.github.io/2019/04/29/nvim_spell_check/
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 
