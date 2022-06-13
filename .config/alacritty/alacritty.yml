@@ -28,13 +28,6 @@ selection:
 shell:
   program: /usr/bin/zsh
 
-    #key_bindings:
-    #  - {
-    #      key: Return,
-    #      mods: Super|Shift,
-    #      action: SpawnNewInstance
-    #    }
-
 # ===== Alacritty adds theme info last
 colors:
   # Default colors

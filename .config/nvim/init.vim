@@ -22,8 +22,8 @@ set wildmenu " tab autocomplete filenames
 " =======
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'vim-airline/vim-airline' " vim status bar
-Plug 'vim-airline/vim-airline-themes' " install airline themes
+"Plug 'vim-airline/vim-airline' " vim status bar
+"Plug 'vim-airline/vim-airline-themes' " install airline themes
 Plug 'jiangmiao/auto-pairs' " closes pairs
 Plug 'chrisbra/Colorizer' " color preview
 Plug 'voldikss/vim-floaterm'
@@ -42,11 +42,10 @@ call plug#end()
 " ===============
 
 " ===== Airline theme
-"let g:airline_theme='base16_monokai'
-let g:airline_theme='base16_gruvbox_dark_hard'
+"let g:airline_theme='base16_gruvbox_dark_hard'
 
 " ===== vimtex 
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex' 
 
 " ===== vim-pencil 
 let g:tex_conceal=""
@@ -76,24 +75,34 @@ set sessionoptions=folds
 " ===== Folds, persistent
 augroup AutoSaveGroup
   autocmd!
-  " view files are about 500 bytes
-  " bufleave but not bufwinleave captures closing 2nd tab
-  " nested is needed by bufwrite* (if triggered via other autocmd)
-  " BufHidden for compatibility with `set hidden`
+	" view files are about 500 bytes
+	" bufleave but not bufwinleave captures closing 2nd tab
+	" nested is needed by bufwrite* (if triggered via other autocmd)
+	" BufHidden for compatibility with `set hidden`
   autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre ?* nested silent! mkview!
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
 " ===== LaTeX tweaks
 autocmd FileType tex :NoMatchParen
-autocmd InsertLeave * update " autosaves/updates after insert move
+autocmd InsertLeave * update	" autosaves/updates after insert move
 au FileType tex setlocal nocursorline
 
 " ===== Tabs
-set tabstop=4 " tab appears 4 spaces wide
-set softtabstop=4 noexpandtab " defensive setting
-set shiftwidth=4 " indent matches tabs
+set tabstop=4					" tab appears 4 spaces wide
+set softtabstop=4 noexpandtab	" defensive setting
+set shiftwidth=4				" indent matches tabs
 
+" ===== Status Bar
+set statusline=
+set statusline+=\ %M			"+ indicates changes have occurred since last save
+set statusline+=\ %y			"display filetype
+set statusline+=\ %r			"'Readonly' flag
+set statusline+=\ %F			"Full filename and path
+set statusline+=%=				"Begin right side settings
+set statusline+=\ [%c]%l/%L		"File line and total lines
+set statusline+=\ %p%%			"Percentage down the page
+ 
 " ============================================
 " Key Remaps 
 " Call them last so they don't get overwritten
@@ -108,7 +117,6 @@ noremap <leader>g :Goyo 60<cr>
 noremap <leader>p :SoftPencil<cr>
 
 " ===== Spelling toggle with F11 
-" https://jdhao.github.io/2019/04/29/nvim_spell_check/
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 
