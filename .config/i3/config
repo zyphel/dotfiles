@@ -179,7 +179,7 @@ client.background       $base07
 
 # Bumblebee Status
 bar {
-    font pango:Liberation Mono 10
+    font pango:Hack Nerd Font Mono 9.5
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status \

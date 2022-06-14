@@ -1,7 +1,6 @@
 # ===== alacritty.yml
 
 # Switch themes with 'alacritty-themes' in terminal
-
 window:
   padding:
     x: 20
@@ -16,12 +15,12 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 14.5
+  size: 13.5
   offset:
     x: 0
     y: 0
   normal:
-    family: "Code New Roman"
+    family: "Hack Nerd Font Mono"
 selection:
   save_to_clipboard: false
 
