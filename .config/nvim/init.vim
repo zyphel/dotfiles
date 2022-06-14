@@ -34,6 +34,8 @@ Plug 'farmergreg/vim-lastplace' " return to last place in file
 Plug 'preservim/vim-pencil'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-startify' " start screen for vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex' " LaTeX support
 call plug#end()
 
@@ -42,7 +44,8 @@ call plug#end()
 " ===============
 
 " ===== Airline theme
-"let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts = 1
 
 " ===== vimtex 
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex' 
@@ -94,15 +97,18 @@ set softtabstop=4 noexpandtab	" defensive setting
 set shiftwidth=4				" indent matches tabs
 
 " ===== Status Bar
-set statusline=
-set statusline+=\ %M			"+ indicates changes have occurred since last save
-set statusline+=\ %y			"display filetype
-set statusline+=\ %r			"'Readonly' flag
-set statusline+=\ %F			"Full filename and path
-set statusline+=%=				"Begin right side settings
-set statusline+=\ [%c]%l/%L		"File line and total lines
-set statusline+=\ %p%%			"Percentage down the page
- 
+"hi User1 guibg=#fabd2f guifg=#928374
+"
+"set statusline= 
+"set statusline+=%1*
+"set statusline+=\ %M				" '+' unsaved
+"set statusline+=\ %y				" filetype
+"set statusline+=\ %r				" RO flag
+"set statusline+=\ %F				" filename and path
+"set statusline+=%=					" seperator
+"set statusline+=\ [%c]\ %l/%L		" lines and total
+"set statusline+=\ %p%%\ 			" % & space
+
 " ============================================
 " Key Remaps 
 " Call them last so they don't get overwritten
