@@ -22,20 +22,18 @@ set wildmenu " tab autocomplete filenames
 " =======
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-"Plug 'vim-airline/vim-airline' " vim status bar
-"Plug 'vim-airline/vim-airline-themes' " install airline themes
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs' " closes pairs
 Plug 'chrisbra/Colorizer' " color preview
 Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf.vim' " fuzzy find
 Plug 'junegunn/goyo.vim' " writing environment
-Plug 'ptzz/lf.vim'
+Plug 'ptzz/lf.vim' " lf file manager
 Plug 'farmergreg/vim-lastplace' " return to last place in file
 Plug 'preservim/vim-pencil'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-startify' " start screen for vim
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex' " LaTeX support
 call plug#end()
 
@@ -88,26 +86,19 @@ augroup end
 
 " ===== LaTeX tweaks
 autocmd FileType tex :NoMatchParen
-autocmd InsertLeave * update	" autosaves/updates after insert move
 au FileType tex setlocal nocursorline
 
-" ===== Tabs
-set tabstop=4					" tab appears 4 spaces wide
-set softtabstop=4 noexpandtab	" defensive setting
-set shiftwidth=4				" indent matches tabs
+" ===== Misc
+autocmd InsertLeave * update		" autosaves/updates after insert move
 
-" ===== Status Bar
-"hi User1 guibg=#fabd2f guifg=#928374
-"
-"set statusline= 
-"set statusline+=%1*
-"set statusline+=\ %M				" '+' unsaved
-"set statusline+=\ %y				" filetype
-"set statusline+=\ %r				" RO flag
-"set statusline+=\ %F				" filename and path
-"set statusline+=%=					" seperator
-"set statusline+=\ [%c]\ %l/%L		" lines and total
-"set statusline+=\ %p%%\ 			" % & space
+" ===== Splits
+highlight WinSeparator guibg=none	" thin separator
+set laststatus=3					" global status line 
+
+" ===== Tabs
+set tabstop=4						" tab appears 4 spaces wide
+set softtabstop=4 noexpandtab		" defensive setting
+set shiftwidth=4					" indent matches tabs
 
 " ============================================
 " Key Remaps 

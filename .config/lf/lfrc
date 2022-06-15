@@ -29,3 +29,13 @@ cmd open ${{
     esac
 }}
 
+# MAPS
+
+map . set hidden!
+map dd delete
+map x cut
+map y copy
+map p paste
+map <enter> open
+map mf mkfile
+map md mkdir
