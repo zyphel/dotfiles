@@ -1,10 +1,10 @@
-# ===== zshrc
+# { zshrc }
 
-export TERMINAL=kitty
+export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' # Ignore case completion
 
-# History in cache directory
+# { cache directory history }
 REPORTTIME=3
 HISTFILE=~/.zhistory
 HISTSIZE=5000
@@ -15,11 +15,11 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 #setopt CORRECT_ALL
 
-# Autocompletion
+# { autocompletion }
 autoload -U compinit
 compinit
 
-# lfcd where you landed
+# { lfcd where you landed }
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
@@ -34,11 +34,13 @@ lfcd () {
     fi
 }
 
-# fzf - fuzzy search
+# { fzf - fuzzy search }
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fzf - open file in vim
+# { fzf - open file in vim }
 bindkey -s '^o' 'nvim $(fzf)^M'
+
+# { alias }
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -75,5 +77,5 @@ alias vbib='nvim ~/Dropbox/LaTeX/references.bib'
 alias vfe='nvim ~/Dropbox/LaTeX/fe-draft/fe-draft.tex'
 alias vjrnl='nvim ~/Dropbox/jrnl/journal.txt'
 
-# Starship prompt
+# { Starship prompt }
 eval "$(starship init zsh)"

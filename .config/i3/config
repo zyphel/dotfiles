@@ -1,4 +1,4 @@
-# ===== i3/config
+# { i3/config }
 
 exec --no-startup-id ~/set_once_i3.sh
 
@@ -11,7 +11,7 @@ for_window [class="^.*"] border pixel 2
 # class											border  backgr. text    indicator child_border
 for_window [class="^.*"] client.focused         #77dd77 #285577 #ffffff #2e9ef4   #285577
 
-# ===== WORKSPACE LAYOUT
+# { WORKSPACE LAYOUT }
 
 # default i3 tiling mode:
 workspace_layout default
@@ -27,7 +27,7 @@ smart_gaps on
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# ===== POWER KEYBINDINGS
+# { Power Keybindings }
 
 # exit-menu
 bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
@@ -35,7 +35,7 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 # change focus between tiling / floating windows
 bindsym $mod+g focus mode_toggle
 
-# ===== MULTIMEDIA KEYS
+# { Multimedia Keys }
 
 # volume
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
@@ -57,12 +57,12 @@ bindsym XF86AudioPrev exec playerctl previous
 # Redirect sound to headphones
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
-# ===== APP SHORTCUTS
+# { APP SHORTCUTS }
 
 # Screenshot
 bindsym Print exec scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~$HOME/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
-# Workspace names
+# workspace names
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -92,16 +92,18 @@ for_window [class=(?i)Solaar] focus
 for_window [class=(?i)discord] focus
 for_window [class=(?i)firefox] focus
 
-# ===== TRANSPARENCY
+# { TRANSPARENCY }
 
 exec_always --no-startup-id picom --vsync
 
-# ===== AUTOSTART
+# { AUTOSTART }
 
-# xset for keyboard repeat rate
-exec xset r rate 300 25
+exec_always espanso
 
 exec_always sxhkd
+
+# xset for keyboard repeat rate
+exec xset r rate 300 50
 
 # https://github.com/nwg-piotr/autotiling
 exec_always --no-startup-id autotiling
@@ -124,12 +126,12 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # Desktop notifications === dunstrc is the stock notification, I turned it off 
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
-# ===== SYSTEM TRAY
+# { SYSTEM TRAY }
 
 # networkmanager-applet
 #exec --no-startup-id nm-applet
 
-# ===== FLOATING RULES
+# { FLOATING RULES }
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -145,7 +147,7 @@ for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enabl
 for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 
-# ===== COLOR SETTINGS FOR BAR AND WINDOWS
+# { COLOR SETTINGS FOR BAR AND WINDOWS }
 
 # Define colors variables
 set $base00 #2E3440
@@ -165,7 +167,7 @@ set $base0D #EBCB8B
 set $base0E #A3BE8C
 set $base0F #B48EAD
 
-# ===== WINDOW COLORS
+# { WINDOW COLORS }
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base0A $base02 $base06 $base0C $base02
@@ -175,15 +177,15 @@ client.urgent           $base0A $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base06 $base00 $base00
 client.background       $base07
 
-# ===== BAR
+# { BAR }
 
 # Bumblebee Status
 bar {
-    font pango:Hack Nerd Font Mono 9.5
+    font pango:FiraCode NF 9.5
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status \
-        -m weather memory cpu date time system \
+        -m weather date time system \
 		-p weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
@@ -191,7 +193,7 @@ bar {
 # Polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# ===== MISC SETTINGS
+# { MISC SETTINGS }
 
 # Focus follows mouse
 focus_follows_mouse no

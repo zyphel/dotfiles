@@ -68,6 +68,10 @@ git
 	rm -rf .git*
 		remove the Git tracking and metadata from your project
 
+gx
+	place cursor on link and typing "gx" will open the web link
+	works even if the web address is on two seperate lines
+
 htop
 	real time sys info
 
@@ -144,6 +148,13 @@ screenfetch (system info)
 sensors
 	temperature display
 
+space after every line
+	g/.\n\n\@!/norm o
+	Description (https://superuser.com/questions/592503/vim-adding-empty-line-between-lines):
+		. Matches any character in the line. (used to immediately discard any existing empty lines from consideration)
+    	\n Matches a single \n at the end of the character above
+    	\n\@! Fails the match if there's another \n immediately after the earlier \n.
+
 speedread
 	practice speed reading 
 
@@ -170,6 +181,7 @@ xset
 	sets keyboard repeat rate
 
 xset r rate 300 25
+	placed in the i3 config for persistence
 	'rate <number>' = milliseconds of keyboard delay
 	default delay rate is '660'
 

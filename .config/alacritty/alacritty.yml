@@ -1,6 +1,7 @@
-# ===== alacritty.yml
+# { alacritty.yml }
 
 # Switch themes with 'alacritty-themes' in terminal
+
 window:
   padding:
     x: 20
@@ -15,19 +16,28 @@ scrolling:
   multiplier: 3
 
 font:
+  normal:
+    family: "FiraCode NF"
   size: 13.5
   offset:
     x: 0
     y: 0
-  normal:
-    family: "Hack Nerd Font Mono"
+
 selection:
   save_to_clipboard: false
+
+bell:
+  duration: 0
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
 
 shell:
   program: /usr/bin/zsh
 
-# ===== Alacritty adds theme info last
+# { alacritty-themes adds theme info last }
 colors:
   # Default colors
   primary:
