@@ -1,4 +1,4 @@
-# Terminal Apps & Commands
+# ===== Apps & Commands
 
 &
 	add "&" at the end of application name
@@ -19,10 +19,6 @@ autotiling
 biber --tool --validate-datamodel ~/Dropbox/LaTeX/references.bib
 	validate bibtex files
 
-bottom
-	system monitor like htop and btop
-	activate with 'btm'
-
 btop
 	like htop, shows system info
 
@@ -39,7 +35,7 @@ ctrl+l
 	equivalent to "clear"
 
 du
-	default app for disk usage 
+	system app for disk usage 
 
 duplicity 
 	backup which uses rsync, good -h file
