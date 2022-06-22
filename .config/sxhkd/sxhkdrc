@@ -1,4 +1,6 @@
-# { sxhkd }
+# ----- sxhkd -----------------------------------
+
+# ----- system ----------------------------------
 
 mod1 + Escape
 	pkill -USR1 -x sxhkd
@@ -12,7 +14,7 @@ mod1 + shift + c
 mod1 + shift + r
 	i3-msg restart
 
-# { applications }
+# ----- applications ----------------------------
 
 mod1 + space
 	rofi -show run
@@ -29,13 +31,10 @@ mod1 + n
 mod1 + m
 	steam
 
-mod1 + t
-	freetube
-
 mod1 + b
 	firefox
 
-# { movement }
+# ----- movement --------------------------------
 
 mod1 + {z,x}
     i3-msg split {v,h}
@@ -52,7 +51,7 @@ mod1 + f
 mod1 + shift + space
     i3-msg floating toggle
 
-# { floating }
+# ----- floating --------------------------------
 
 mod1 + shift + space
     i3-msg floating toggle
@@ -63,7 +62,7 @@ mod1 + super + space
 mod1 + a
     i3-msg focus parent
 
-# { workspaces }
+# ----- workspaces ------------------------------
 
 mod1 + {1-9,0}
 	i3-msg workspace {1-9,10}

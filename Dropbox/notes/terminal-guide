@@ -22,6 +22,9 @@ biber --tool --validate-datamodel ~/Dropbox/LaTeX/references.bib
 btop
 	like htop, shows system info
 
+chsh -s $(which zsh)
+	changes shell, i.e., from bash to zsh
+	
 cmatrix
 	matrix text
 

@@ -16,8 +16,9 @@ setopt HIST_IGNORE_SPACE
 #setopt CORRECT_ALL
 
 # { autocompletion }
-autoload -U compinit
+autoload -Uz compinit
 compinit
+_comp_options+=(globdots)	# include hidden files
 
 # { lfcd where you landed }
 lfcd () {
@@ -41,7 +42,6 @@ lfcd () {
 bindkey -s '^o' 'nvim $(fzf)^M'
 
 # { alias }
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cdd='cd && clear'

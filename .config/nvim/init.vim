@@ -1,45 +1,58 @@
-" { init.vim }
+" ----- init.vim -------------------------------------------
 
-set nocompatible
+set nocompatible			" no vi compatibility
 filetype plugin indent on
-syntax on
+syntax enable
 
-set clipboard=unnamedplus " copy to system clipboard
-set hidden " buffers remain open in the background
-set ignorecase " search freely
-set incsearch " incremental search
-set nobackup " vim will not create a backup
-set noerrorbells " peaceful writing
-set nohlsearch " no highlighting on search
-set noswapfile " will not create... swapfile
-set nu " line numbers
-set scrolloff=18 " cursor centered w/ 12 line margin top/bottom
+set shell=/usr/bin/zsh
+set clipboard=unnamedplus	" copy to system clipboard
+set hidden					" buffers remain open in the background
+set history=1000
+set ignorecase				" search freely
+set incsearch				" incremental search
+set linebreak
+set nobackup				" vim will not create a backup
+set noerrorbells			" peaceful writing
+set nohlsearch				" no highlighting on search
+set noswapfile				" will not create... swapfile
+set nu						" line numbers
+set scrolloff=18			" cursor centered w/ 12 line margin top/bottom
 set undofile
-set wildmenu " tab autocomplete filenames
+set wildmenu				" tab autocomplete filenames
+set wrap					" enable text wrapping
 
-" { plugins }
+" ----- plugins -------------------------------------------
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chrisbra/Colorizer' " color preview
-Plug 'junegunn/fzf.vim' " fuzzy find
-Plug 'junegunn/goyo.vim' " writing environment
-Plug 'ptzz/lf.vim' " lf file manager
+Plug 'dkarter/bullets.vim'
+Plug 'chrisbra/Colorizer'		" color preview
+Plug 'junegunn/fzf.vim'			" fuzzy find
+Plug 'junegunn/goyo.vim'		" writing environment
+Plug 'ptzz/lf.vim'				" lf file manager
 Plug 'farmergreg/vim-lastplace' " return to last place in file
 Plug 'preservim/vim-pencil'
 Plug 'tpope/vim-sensible'
-Plug 'mhinz/vim-startify' " start screen for vim
+Plug 'mhinz/vim-startify'		" start screen for vim
 Plug 'tpope/vim-surround'
 "Plug 'vimwiki/vimwiki'
-Plug 'lervag/vimtex' " LaTeX support
+Plug 'lervag/vimtex'			" LaTeX support
 call plug#end()
 
-" { plugin settings }
+" ----- plugin settings -----------------------------------
 
 " Airline theme
 let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
+
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch'
+    \]
 
 " vimtex 
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex' 
@@ -64,7 +77,7 @@ augroup END
 
 "let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
-" { vim functions }
+" ----- vim functions -------------------------------------
 
 " Viewer options
 let g:vimtex_view_method = 'zathura'
@@ -100,7 +113,7 @@ set tabstop=4						" tab appears 4 spaces wide
 set softtabstop=4 noexpandtab		" defensive setting
 set shiftwidth=4					" indent matches tabs
 
-" { key remaps - call them last so they don't get overwritten }
+" ----- key remaps last, no overwrite ---------------------
 
 " shortcuts
 let mapleader = " "
@@ -115,5 +128,5 @@ nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " esc
-inoremap jj <Esc>
-inoremap JJ <Esc>
+"inoremap jj <Esc>
+"inoremap JJ <Esc>

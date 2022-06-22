@@ -7,7 +7,7 @@ font pango: monospace 10
 set $mod Mod1
 
 # better window borders (from ThePrimeagen)
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 # class											border  backgr. text    indicator child_border
 for_window [class="^.*"] client.focused         #77dd77 #285577 #ffffff #2e9ef4   #285577
 
@@ -57,7 +57,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Redirect sound to headphones
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
-# { APP SHORTCUTS }
+# { app shortcuts }
 
 # Screenshot
 bindsym Print exec scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~$HOME/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
@@ -92,15 +92,15 @@ for_window [class=(?i)Solaar] focus
 for_window [class=(?i)discord] focus
 for_window [class=(?i)firefox] focus
 
-# { TRANSPARENCY }
+# { transparency }
 
 exec_always --no-startup-id picom --vsync
 
-# { AUTOSTART }
-
-exec_always espanso
+# { autostart }
 
 exec_always sxhkd
+
+exec_always espanso
 
 # xset for keyboard repeat rate
 exec xset r rate 300 50
@@ -126,12 +126,12 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # Desktop notifications === dunstrc is the stock notification, I turned it off 
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
-# { SYSTEM TRAY }
+# { system tray }
 
 # networkmanager-applet
 #exec --no-startup-id nm-applet
 
-# { FLOATING RULES }
+# { floating rules }
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -147,7 +147,7 @@ for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enabl
 for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 
-# { COLOR SETTINGS FOR BAR AND WINDOWS }
+# { color settings for bar and windows }
 
 # Define colors variables
 set $base00 #2E3440
@@ -167,7 +167,7 @@ set $base0D #EBCB8B
 set $base0E #A3BE8C
 set $base0F #B48EAD
 
-# { WINDOW COLORS }
+# { window colors }
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base0A $base02 $base06 $base0C $base02
@@ -177,7 +177,7 @@ client.urgent           $base0A $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base06 $base00 $base00
 client.background       $base07
 
-# { BAR }
+# { bar }
 
 # Bumblebee Status
 bar {
@@ -185,7 +185,7 @@ bar {
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status \
-        -m weather date time system \
+        -m date time system \
 		-p weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
@@ -193,7 +193,7 @@ bar {
 # Polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# { MISC SETTINGS }
+# { misc settings }
 
 # Focus follows mouse
 focus_follows_mouse no
