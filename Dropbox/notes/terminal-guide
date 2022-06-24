@@ -173,8 +173,23 @@ vit
 	taskwarrior frontend, vim functionality
 
 xclip
-	The system-wide clipboard that worked for me in i3wm
+	The system-wide clipboard that worked in i3wm
 	I tried ~5 of them. All failed but xclip. 
+
+xmodmap
+	https://superuser.com/questions/566871/how-to-map-the-caps-lock-key-to-escape-key-in-arch-linux
+	place the following lines in ~/.Xmodmap
+	no tabs...
+
+	! 66 is the keycode of Caps_Lock
+	clear    Lock
+	keycode  66 = Escape 
+
+xmodmap ~/.Xmodmap
+	reload xmodmap config
+
+xprop
+	dsiplay system information with a click
 
 xset
 	sets keyboard repeat rate
@@ -183,9 +198,6 @@ xset r rate 300 25
 	placed in the i3 config for persistence
 	'rate <number>' = milliseconds of keyboard delay
 	default delay rate is '660'
-
-xprop
-	dsiplay system information with a click
 
 yt-dlp "url"
 yt-dlp -x --audio-format mp3 "url"

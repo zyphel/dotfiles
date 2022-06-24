@@ -1,10 +1,13 @@
-# { zshrc }
+# ----- zshrc ---------------------------------------------
 
 export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' # Ignore case completion
+# Ignore case completion
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
 
-# { cache directory history }
+neofetch --source ~/Documents/neofetch.ascii
+
+# ----- cache directory history ---------------------------
 REPORTTIME=3
 HISTFILE=~/.zhistory
 HISTSIZE=5000
@@ -15,7 +18,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 #setopt CORRECT_ALL
 
-# { autocompletion }
+# ----- autocompletion ------------------------------------
 autoload -Uz compinit
 compinit
 _comp_options+=(globdots)	# include hidden files
@@ -35,13 +38,13 @@ lfcd () {
     fi
 }
 
-# { fzf - fuzzy search }
+# ----- fzf - fuzzy search --------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# { fzf - open file in vim }
+# ----- fzf - open file in vim ----------------------------
 bindkey -s '^o' 'nvim $(fzf)^M'
 
-# { alias }
+# ----- alias ---------------------------------------------
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cdd='cd && clear'
@@ -67,9 +70,9 @@ alias lf='lfcd'
 alias ls='ls --color=auto'
 alias lsblk='lsblk -e 7'
 alias n='cd ~/Dropbox/notes && clear'
-alias nf='neofetch'
+alias neofetch='neofetch --source ~/Documents/neofetch.ascii'
 alias q='exit'
-alias rm='rm -i' # make rm safe - will ask are you sure?
+alias rm='rm -i'	# make rm safe - will ask are you sure?
 alias smith='cd /run/media/jeff/smith/'
 alias update='yay'
 alias v='nvim'
@@ -77,5 +80,5 @@ alias vbib='nvim ~/Dropbox/LaTeX/references.bib'
 alias vfe='nvim ~/Dropbox/LaTeX/fe-draft/fe-draft.tex'
 alias vjrnl='nvim ~/Dropbox/jrnl/journal.txt'
 
-# { Starship prompt }
+# ----- Starship prompt -----------------------------------
 eval "$(starship init zsh)"

@@ -1,6 +1,6 @@
-# { alacritty.yml }
+# ----- alacritty.yml -------------------------------------
 
-# Switch themes with 'alacritty-themes' in terminal
+# theme switcher, 'alacritty-themes', in terminal
 
 window:
   padding:
@@ -37,7 +37,7 @@ cursor:
 shell:
   program: /usr/bin/zsh
 
-# { alacritty-themes adds theme info last }
+# ----- alacritty-themes adds theme info last -------------
 colors:
   # Default colors
   primary:
