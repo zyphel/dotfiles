@@ -71,6 +71,7 @@ alias ls='ls --color=auto'
 alias lsblk='lsblk -e 7'
 alias n='cd ~/Dropbox/notes && clear'
 alias neofetch='neofetch --source ~/Documents/neofetch.ascii'
+alias nf='neofetch --source ~/Documents/neofetch.ascii'
 alias q='exit'
 alias rm='rm -i'	# make rm safe - will ask are you sure?
 alias smith='cd /run/media/jeff/smith/'
