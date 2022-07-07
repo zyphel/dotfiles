@@ -75,7 +75,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # bind program to workspace 
-assign [class="Thunderbird"] $ws3
+assign [class="Thunderbird"] $ws4
 assign [class="(?i)pcmanfm"] $ws4
 assign [class="(?i)bitwarden"] $ws5
 assign [class="obsidian"] $ws5
@@ -99,12 +99,10 @@ exec_always --no-startup-id picom --vsync
 # ----- autostart -----------------------------------------
 
 exec_always sxhkd
-
 exec_always espanso
 
 # xset for keyboard repeat rate
 exec xset r rate 300 50
-
 # https://github.com/nwg-piotr/autotiling
 exec_always --no-startup-id autotiling
 
@@ -184,14 +182,11 @@ bar {
     font pango:FiraCode NF 9.5
     position top
     tray_output none
-    status_command ~/.config/bumblebee-status/bumblebee-status \
-        -m weather date time system \
+    status_command ~/.config/bumblebee-status/bumblebee-status -m \
+        pasink weather date time system \
 		-p weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
-
-# Polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # ----- misc settings -------------------------------------
 

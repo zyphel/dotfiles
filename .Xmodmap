@@ -1,3 +1,0 @@
-! capslock = escape
-clear    Lock
-keycode  66 = Escape 

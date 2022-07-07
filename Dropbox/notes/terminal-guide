@@ -12,6 +12,9 @@ ag 'search-terms' w
 alacritty-themes
 	terminal theme stitcher
 
+apropos 
+	search les descriptions for program name you might have forgotten
+
 autotiling
 	https://github.com/nwg-piotr/autotiling
 	switch layout depending on focused window dimensions
@@ -93,11 +96,17 @@ lolcat
 lsusb
 	usb drive
 
+ly
+	display manager, i.e., lockscreen manager
+
 ncdu
 	disk usage
 
 neofetch
 	sys info
+
+newsboat
+	terminal rss reader
 
 nudoku
 	terminal sudoku
@@ -144,6 +153,9 @@ screenfetch (system info)
 	display system information
 	much like neofetch
 
+seahorse
+	gui for gnome keyring manager
+
 sensors
 	temperature display
 
@@ -156,6 +168,9 @@ space after every line
 
 speedread
 	practice speed reading 
+
+sudoedit
+	edit files as super user 
 
 taskwarrior
 	tasks 
@@ -181,9 +196,9 @@ xmodmap
 	place the following lines in ~/.Xmodmap
 	no tabs...
 
-	! 66 is the keycode of Caps_Lock
-	clear    Lock
-	keycode  66 = Escape 
+! 66 is the keycode of Caps_Lock
+clear    Lock
+keycode  66 = Escape 
 
 xmodmap ~/.Xmodmap
 	reload xmodmap config

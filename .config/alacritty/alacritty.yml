@@ -1,6 +1,6 @@
 # ----- alacritty.yml -------------------------------------
-# theme switcher, 'alacritty-themes', in terminal
 
+# theme switcher, 'alacritty-themes', in terminal
 window:
   padding:
     x: 20
@@ -8,7 +8,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.95
+  opacity: 0.97
 
 scrolling:
   history: 10000
