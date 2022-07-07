@@ -1,14 +1,14 @@
-" ----- init.vim -------------------------------------------
+" ----- init.vim ----------------------------------------------------
 
 set nocompatible					" no vi compatibility
 filetype plugin indent on			" filetype detection
-syntax enable						" sytax detection and display
+syntax on							" sytax detection and display
 
 set shell=/usr/bin/zsh
-set clipboard=unnamedplus			" copy to system clipboard
+set clipboard+=unnamedplus			" copy to system clipboard
 set hidden							" buffers remain open in the background
 set history=1000					" remembers command-lines entered in table
-set ignorecase						" search freely
+set ignorecase						" case-insensitive search 
 set incsearch						" incremental search
 set linebreak						" visual word-wrap
 set nobackup						" vim will not create a backup
@@ -16,43 +16,63 @@ set noerrorbells					" peaceful writing
 set nohlsearch						" no highlighting on search
 set noswapfile						" will not create... swapfile
 set nu								" line numbers
-set scrolloff=18					" cursor centered w/ 12 line margin top/bottom
+set number
+set scrolloff=18					" cursor centered with margin as defined
+set smartcase						" search recognizes uppercase
+set termguicolors					" enables 24-bit color in the TUI
 set undofile						" creates file to persistently track 'undo'
 set wildmenu						" tab autocomplete filenames
 
-" ----- plugins -------------------------------------------
+autocmd Filetype yaml set cursorcolumn
+autocmd Filetype yml set cursorcolumn
+autocmd Filetype python set cursorcolumn
+
+" ----- plugins -----------------------------------------------------
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+Plug 'dkarter/bullets.vim'
+Plug 'chrisbra/Colorizer'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'ptzz/lf.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'baskerville/vim-sxhkdrc'
+Plug 'farmergreg/vim-lastplace'
+Plug 'preservim/vim-pencil'
+Plug 'tpope/vim-sensible'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-surround'
+Plug 'lervag/vimtex'
+
+" colorschemes
+Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/everforest'
+Plug 'arcticicestudio/nord-vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'nanotech/jellybeans.vim'
+Plug 'savq/melange'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'ajh17/spacegray.vim'
+Plug 'sainnhe/sonokai'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dkarter/bullets.vim'			" bullet point functionality
-Plug 'chrisbra/Colorizer'			" color preview
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'				" fuzzy find
-Plug 'junegunn/goyo.vim'			" writing environment
-Plug 'ptzz/lf.vim'					" lf file manager
-Plug 'farmergreg/vim-lastplace'		" return to last place in file
-Plug 'preservim/vim-pencil'			" writing tweaks such as wrap, etc.
-Plug 'tpope/vim-sensible'			" universal set of defaults for ease of use
-Plug 'mhinz/vim-startify'			" vim start screen
-Plug 'tpope/vim-surround'			" bracket surround functionality w/ shortcuts
-"Plug 'vimwiki/vimwiki'				" a wiki (don't think it'll last)
-Plug 'lervag/vimtex'				" LaTeX support, including preview
+
 call plug#end()
 
-" ----- plugin settings -----------------------------------
+" ----- plugin settings ---------------------------------------------
 
 " Airline theme
-let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_theme='base16_gruvbox_dark_pale'
 let g:airline_powerline_fonts = 1
 
 " bullets.vim
-let g:bullets_enabled_file_types = [
-    \ 'markdown',
-    \ 'text',
-    \ 'gitcommit',
-    \ 'scratch'
-    \]
+let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit']
 
 " vimtex 
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex' 
@@ -71,16 +91,21 @@ augroup pencil
 	autocmd FileType tex call pencil#init({'wrap' : 'soft'})
 augroup END
 
-" vim-wiki, markdown no conceal
-"let g:vim_markdown_conceal = 0
-"let g:vim_markdown_conceal_code_blocks = 0
+" ----- colorscheme settings ----------------------------------------
 
-"let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+" colorscheme
+colorscheme gruvbox-material
 
-" ----- vim functions -------------------------------------
+" colorscheme, background transparency
+hi Normal guibg=NONE ctermbg=NONE
 
-" Viewer options
-let g:vimtex_view_method = 'zathura'
+" colorscheme, retain after goyo exit
+autocmd! User GoyoLeave source $HOME/.config/nvim/init.vim
+
+" ----- vim functions -----------------------------------------------
+
+" stop automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Folds options
 set viewoptions=folds,cursor
@@ -113,12 +138,15 @@ set tabstop=4						" tab appears 4 spaces wide
 set softtabstop=4 noexpandtab		" defensive setting
 set shiftwidth=4					" indent matches tabs
 
-" ----- key remaps, last to prevent overwrite -------------
+" Viewer options
+let g:vimtex_view_method = 'zathura'
+
+" ----- key remaps, last to prevent overwrite -----------------------
 
 " shortcuts
 let mapleader = " "
 let g:matchup_matchparen_enabled = 0
-let g:fzf_preview_window = ['right:50%', 'ctrl-/']"noremap <leader>f :FZF<cr>
+"let g:fzf_preview_window = ['right:50%', 'ctrl-/']"noremap <leader>f :FZF<cr>
 
 noremap <leader>g :Goyo 60<cr>
 noremap <leader>p :SoftPencil<cr>
@@ -126,4 +154,3 @@ noremap <leader>p :SoftPencil<cr>
 " spelling toggle with F11
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
-
