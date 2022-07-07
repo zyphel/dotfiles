@@ -1,10 +1,13 @@
-# BASIC SETTINGS
+# ----- basic settings ----------------------------------------------
+
 set hidden true
 set ignorecase true
 set scrolloff 10
 
-# CUSTOM FUNCTIONS
+# ----- custom functions --------------------------------------------
+
 # example: type "$" then "mkdir" will create director
+
 cmd mkdir ${{
 	printf "Directory Name: "
 	read ans
@@ -21,6 +24,7 @@ cmd mkfile ${{
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
+
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type $f -b) in
@@ -29,7 +33,7 @@ cmd open ${{
     esac
 }}
 
-# MAPS
+# ----- maps --------------------------------------------------------
 
 map . set hidden!
 map dd delete
