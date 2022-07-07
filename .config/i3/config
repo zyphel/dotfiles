@@ -101,14 +101,11 @@ exec_always --no-startup-id picom --vsync
 exec_always sxhkd
 exec_always espanso
 
-# xset for keyboard repeat rate
-exec xset r rate 300 50
 # https://github.com/nwg-piotr/autotiling
 exec_always --no-startup-id autotiling
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
