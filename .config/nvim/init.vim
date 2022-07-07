@@ -6,8 +6,8 @@ syntax on							" sytax detection and display
 
 set shell=/usr/bin/zsh
 set clipboard+=unnamedplus			" copy to system clipboard
-set hidden							" buffers remain open in the background
-set history=1000					" remembers command-lines entered in table
+set hidden							" buffers open in the background
+set history=1000					" remember command-lines
 set ignorecase						" case-insensitive search 
 set incsearch						" incremental search
 set linebreak						" visual word-wrap
@@ -17,10 +17,10 @@ set nohlsearch						" no highlighting on search
 set noswapfile						" will not create... swapfile
 set nu								" line numbers
 set number
-set scrolloff=18					" cursor centered with margin as defined
+set scrolloff=18					" cursor centered, margin as defined
 set smartcase						" search recognizes uppercase
 set termguicolors					" enables 24-bit color in the TUI
-set undofile						" creates file to persistently track 'undo'
+set undofile						" track 'undo' in file
 set wildmenu						" tab autocomplete filenames
 
 autocmd Filetype yaml set cursorcolumn
@@ -48,8 +48,6 @@ Plug 'lervag/vimtex'
 
 " colorschemes
 Plug 'ayu-theme/ayu-vim'
-Plug 'sainnhe/everforest'
-Plug 'arcticicestudio/nord-vim'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
@@ -57,7 +55,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'savq/melange'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'ajh17/spacegray.vim'
 Plug 'sainnhe/sonokai'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline'
@@ -94,7 +91,7 @@ augroup END
 " ----- colorscheme settings ----------------------------------------
 
 " colorscheme
-colorscheme gruvbox-material
+colorscheme melange
 
 " colorscheme, background transparency
 hi Normal guibg=NONE ctermbg=NONE
