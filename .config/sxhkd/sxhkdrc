@@ -20,7 +20,7 @@ mod1 + space
 	rofi -show run
 
 mod1 + Return
-	alacritty
+	kitty
 
 mod1 + d
 	discord
