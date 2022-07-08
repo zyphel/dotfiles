@@ -56,17 +56,10 @@ Plug 'savq/melange'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'sainnhe/sonokai'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 " ----- plugin settings ---------------------------------------------
-
-" Airline theme
-let g:airline_theme='base16_gruvbox_dark_pale'
-let g:airline_powerline_fonts = 1
 
 " bullets.vim
 let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit']
@@ -91,7 +84,7 @@ augroup END
 " ----- colorscheme settings ----------------------------------------
 
 " colorscheme
-colorscheme melange
+colorscheme gruvbox-material
 
 " colorscheme, background transparency
 hi Normal guibg=NONE ctermbg=NONE
