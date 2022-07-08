@@ -97,8 +97,8 @@ hugo new content/posts/file-name.md
 static-site generator
 
 -- input-remapper
-	keyboard remapper
-	used to turn 'caps lock' into 'esc'
+	keyboard manager/remapper
+	I used it to remap 'caps lock' to 'esc' ... nvim got a lot easier
 
 -- jrnl 
 terminal journaling app
