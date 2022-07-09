@@ -6,6 +6,7 @@ syntax on							" sytax detection and display
 
 set shell=/usr/bin/zsh
 set clipboard+=unnamedplus			" copy to system clipboard
+set display=lastline
 set hidden							" buffers open in the background
 set history=1000					" remember command-lines
 set ignorecase						" case-insensitive search 
@@ -48,14 +49,11 @@ Plug 'lervag/vimtex'
 
 " colorschemes
 Plug 'ayu-theme/ayu-vim'
-Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
-Plug 'nanotech/jellybeans.vim'
 Plug 'savq/melange'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'sainnhe/sonokai'
 
 call plug#end()
 

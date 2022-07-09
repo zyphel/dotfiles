@@ -171,7 +171,7 @@ client.background       $base07
 
 # Bumblebee Status
 bar {
-    font pango:IBM Plex Mono 9.5
+    font pango: IBM Plex Mono 9.5
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status -m \

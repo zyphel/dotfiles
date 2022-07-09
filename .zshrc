@@ -1,6 +1,6 @@
 # ----- zshrc -------------------------------------------------------
 
-export TERMINAL=kitty
+export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
 # Ignore case completion
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
