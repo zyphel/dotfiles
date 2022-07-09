@@ -16,7 +16,7 @@ scrolling:
 
 font:
   normal:
-    family: "FiraCode NF"
+    family: "IBM Plex Mono"
   size: 13.5
   offset:
     x: 0
