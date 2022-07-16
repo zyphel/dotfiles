@@ -1,28 +1,29 @@
-" ----- init.vim ----------------------------------------------------
+" ----- init.vim -------------------------
 
-set nocompatible					" no vi compatibility
-filetype plugin indent on			" filetype detection
-syntax on							" sytax detection and display
+set nocompatible " no vi compatibility
+filetype plugin indent on " filetype detection
+syntax on " sytax detection and display
 
 set shell=/usr/bin/zsh
-set clipboard+=unnamedplus			" copy to system clipboard
+set clipboard+=unnamedplus			
 set display=lastline
-set hidden							" buffers open in the background
-set history=1000					" remember command-lines
-set ignorecase						" case-insensitive search 
-set incsearch						" incremental search
-set linebreak						" visual word-wrap
-set nobackup						" vim will not create a backup
-set noerrorbells					" peaceful writing
-set nohlsearch						" no highlighting on search
-set noswapfile						" will not create... swapfile
-set nu								" line numbers
+set hidden " buffers open in the background
+set history=1000 " remember command-lines
+set ignorecase " case-insensitive search 
+set incsearch " incremental search
+set linebreak " visual word-wrap
+set mouse=nv " mouse use in vim
+set nobackup " vim will not create a backup
+set noerrorbells " peaceful writing
+set nohlsearch " no highlighting on search
+set noswapfile " will not create... swapfile
+set nu " line numbers
 set number
-set scrolloff=18					" cursor centered, margin as defined
-set smartcase						" search recognizes uppercase
-set termguicolors					" enables 24-bit color in the TUI
-set undofile						" track 'undo' in file
-set wildmenu						" tab autocomplete filenames
+set scrolloff=18 " cursor centered, margin as defined
+set smartcase " search recognizes uppercase
+set termguicolors " enables 24-bit color in the TUI
+set undofile " track 'undo' in file
+set wildmenu " tab autocomplete filenames
 
 autocmd Filetype yaml set cursorcolumn
 autocmd Filetype yml set cursorcolumn
@@ -37,8 +38,9 @@ Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'ptzz/lf.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'preservim/nerdtree'
+Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'voldikss/vim-floaterm'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'farmergreg/vim-lastplace'
 Plug 'preservim/vim-pencil'
@@ -70,7 +72,7 @@ let g:tex_conceal = ""
 let g:pencil#conceallevel = 0
 
 " vim-pencil autostart
-let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
+let g:pencil#wrapModeDefault = 'soft'
 
 augroup pencil
 	autocmd!
@@ -114,17 +116,18 @@ augroup end
 autocmd FileType tex :NoMatchParen
 au FileType tex setlocal nocursorline
 
-" misc
-autocmd InsertLeave * update		" autosaves/updates after insert move
+autocmd InsertLeave * update " autosaves/updates after insert move
 
-" splits
-highlight WinSeparator guibg=none	" thin separator
-set laststatus=3					" global status line 
+"" splits
+" thin separator
+highlight WinSeparator guibg=none
+" global status line
+set laststatus=3
 
 " tabs
-set tabstop=4						" tab appears 4 spaces wide
-set softtabstop=4 noexpandtab		" defensive setting
-set shiftwidth=4					" indent matches tabs
+set tabstop=4 " tab appears 4 spaces wide
+set softtabstop=4 noexpandtab " defensive setting
+set shiftwidth=4 " indent matches tabs
 
 " Viewer options
 let g:vimtex_view_method = 'zathura'
@@ -138,6 +141,8 @@ let g:matchup_matchparen_enabled = 0
 
 noremap <leader>g :Goyo 60<cr>
 noremap <leader>p :SoftPencil<cr>
+nnoremap <leader>n :NERDTreeToggle<CR>
+noremap <leader>f :FZF<CR>
 
 " spelling toggle with F11
 nnoremap <silent> <F11> :set spell!<cr>
