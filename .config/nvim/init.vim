@@ -1,11 +1,12 @@
 " ----- init.vim -------------------------
 
 set nocompatible " no vi compatibility
-filetype plugin indent on " filetype detection
+filetype plugin on " filetype detection
 syntax on " sytax detection and display
 
 set shell=/usr/bin/zsh
-set clipboard+=unnamedplus			
+"set clipboard+=unnamedplus			
+set clipboard=unnamedplus
 set display=lastline
 set hidden " buffers open in the background
 set history=1000 " remember command-lines
@@ -19,6 +20,7 @@ set nohlsearch " no highlighting on search
 set noswapfile " will not create... swapfile
 set nu " line numbers
 set number
+set path+=** " subdir search ':find <search-term>'
 set scrolloff=18 " cursor centered, margin as defined
 set smartcase " search recognizes uppercase
 set termguicolors " enables 24-bit color in the TUI
@@ -33,13 +35,13 @@ autocmd Filetype python set cursorcolumn
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'dkarter/bullets.vim'
+"Plug 'dkarter/bullets.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+"Plug 'jakewvincent/mkdnflow.nvim'
 Plug 'preservim/nerdtree'
-Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'voldikss/vim-floaterm'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'farmergreg/vim-lastplace'
