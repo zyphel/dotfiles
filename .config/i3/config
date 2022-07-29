@@ -1,4 +1,4 @@
-# ----- i3/config -----------------------------------------
+# ----- i3/config ----------------------------------------
 
 exec --no-startup-id ~/set_once_i3.sh
 
@@ -99,7 +99,7 @@ exec_always --no-startup-id picom --vsync
 # ----- autostart -----------------------------------------
 
 exec_always sxhkd
-exec_always espanso
+#exec_always espanso
 
 # https://github.com/nwg-piotr/autotiling
 exec_always --no-startup-id autotiling
@@ -171,12 +171,12 @@ client.background       $base07
 
 # Bumblebee Status
 bar {
-    font pango: IBM Plex Mono 9.5
+    font pango: FiraCode NF 9.5
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status -m \
         pasink weather date time system \
-		-p weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
+		-p weather.location="5809902" weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
 
@@ -186,4 +186,4 @@ bar {
 focus_follows_mouse no
 
 # Suspend
-bindsym $mod+Shift+period exec systemctl suspend
+# bindsym $mod+Shift+period exec systemctl suspend
