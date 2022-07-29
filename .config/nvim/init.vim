@@ -1,31 +1,34 @@
-" ----- init.vim -------------------------
+" ~~~~~ init.vim ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+if has("eval")							"vim-tiny lacks 'eval'
+	let skip_defaults_vim = 1
+endif
 
 set nocompatible " no vi compatibility
 filetype plugin on " filetype detection
 syntax on " sytax detection and display
 
-set shell=/usr/bin/zsh
-"set clipboard+=unnamedplus			
-set clipboard=unnamedplus
+set background=dark
+set clipboard=unnamed,unnamedplus
 set display=lastline
-set hidden " buffers open in the background
-set history=1000 " remember command-lines
-set ignorecase " case-insensitive search 
-set incsearch " incremental search
-set linebreak " visual word-wrap
-set mouse=nv " mouse use in vim
-set nobackup " vim will not create a backup
-set noerrorbells " peaceful writing
-set nohlsearch " no highlighting on search
-set noswapfile " will not create... swapfile
-set nu " line numbers
-set number
-set path+=** " subdir search ':find <search-term>'
-set scrolloff=18 " cursor centered, margin as defined
-set smartcase " search recognizes uppercase
-set termguicolors " enables 24-bit color in the TUI
-set undofile " track 'undo' in file
-set wildmenu " tab autocomplete filenames
+set hidden					" buffers open in the background
+set history=1000
+set ignorecase				" case-insensitive search 
+set incsearch
+set linebreak				" visual word-wrap
+set mouse=nv
+set nobackup
+set noerrorbells
+set nohlsearch
+set noswapfile
+set nu 
+set path+=**				" subdir search ':find <search-term>'
+set scrolloff=18			" cursor centered, margin as defined
+set shell=/usr/bin/zsh
+set smartcase				" search recognizes uppercase
+set termguicolors			" enables 24-bit color in the TUI
+set undofile
+set wildmenu				" tab autocomplete filenames
 
 autocmd Filetype yaml set cursorcolumn
 autocmd Filetype yml set cursorcolumn
@@ -35,12 +38,12 @@ autocmd Filetype python set cursorcolumn
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-"Plug 'dkarter/bullets.vim'
+Plug 'dkarter/bullets.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 "Plug 'jakewvincent/mkdnflow.nvim'
+Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'voldikss/vim-floaterm'
 Plug 'baskerville/vim-sxhkdrc'
@@ -52,22 +55,27 @@ Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
 
 " colorschemes
-Plug 'ayu-theme/ayu-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'savq/melange'
-Plug 'EdenEast/nightfox.nvim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 call plug#end()
 
 " ----- plugin settings ---------------------------------------------
+
+" syntax contingency
+if has("syntax")
+	syntax enable
+endif
 
 " bullets.vim
 let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit']
 
 " vimtex 
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex' 
+let g:vimtex_view_method = 'zathura'
+autocmd FileType tex :NoMatchParen
+au FileType tex setlocal nocursorline
 
 " vim-pencil 
 let g:tex_conceal = ""
@@ -85,25 +93,33 @@ augroup END
 
 " ----- colorscheme settings ----------------------------------------
 
-" colorscheme
-colorscheme gruvbox-material
-
-" colorscheme, background transparency
-hi Normal guibg=NONE ctermbg=NONE
-
-" colorscheme, retain after goyo exit
+" retain colorscheme after goyo exit
 autocmd! User GoyoLeave source $HOME/.config/nvim/init.vim
 
-" ----- vim functions -----------------------------------------------
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_background = 'soft'
 
-" stop automatic comment insertion
+" colorscheme (settings precede colorscheme)
+colorscheme gruvbox-material
+
+" ----- lightline ---------------------------------------------------
+
+let g:lightline = {'colorscheme' : 'gruvbox_material'}
+
+" ~~~~~ VIM FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" ----- stop automatic comment insertion ----------------------------
+
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Folds options
+" ---- folds --------------------------------------------------------
+
+" options
 set viewoptions=folds,cursor
 set sessionoptions=folds
 
-" Folds, persistent
+" persistent folds
 augroup AutoSaveGroup
   autocmd!
 	" view files are about 500 bytes
@@ -114,37 +130,37 @@ augroup AutoSaveGroup
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
-" LaTeX tweaks
-autocmd FileType tex :NoMatchParen
-au FileType tex setlocal nocursorline
+" ----- splits ------------------------------------------------------
 
-autocmd InsertLeave * update " autosaves/updates after insert move
-
-"" splits
 " thin separator
 highlight WinSeparator guibg=none
+
 " global status line
 set laststatus=3
 
-" tabs
+" ----- tabs --------------------------------------------------------
+
 set tabstop=4 " tab appears 4 spaces wide
 set softtabstop=4 noexpandtab " defensive setting
 set shiftwidth=4 " indent matches tabs
 
-" Viewer options
-let g:vimtex_view_method = 'zathura'
+" ----- autosave/update upon insert leave ---------------------------
 
-" ----- key remaps, last to prevent overwrite -----------------------
+autocmd InsertLeave * update 
+
+" ----- key remaps (last to prevent overwrite) ----------------------
 
 " shortcuts
 let mapleader = " "
 let g:matchup_matchparen_enabled = 0
-"let g:fzf_preview_window = ['right:50%', 'ctrl-/']"noremap <leader>f :FZF<cr>
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']"noremap <leader>f :FZF<cr>
 
 noremap <leader>g :Goyo 60<cr>
 noremap <leader>p :SoftPencil<cr>
-nnoremap <leader>n :NERDTreeToggle<CR>
-noremap <leader>f :FZF<CR>
+nnoremap <leader>n :NERDTreeToggle<cr>
+noremap <leader>f :FZF<cr>
+noremap	<leader>s :w<cr>
+noremap <leader>q :wq<cr>
 
 " spelling toggle with F11
 nnoremap <silent> <F11> :set spell!<cr>
