@@ -1,6 +1,6 @@
 # ----- basic settings ----------------------------------------------
 
-set hidden true
+set hidden false
 set ignorecase true
 set scrolloff 10
 
@@ -14,7 +14,7 @@ cmd mkdir ${{
 	mkdir $ans
 }}
 
-cmd mkfile ${{
+cmd touch ${{
 	printf "File Name: "
 	read ans
 	$EDITOR $ans
