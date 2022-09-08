@@ -49,6 +49,10 @@ many functions, I use it to look at the temp
 terminal shortcut
 equivalent to "clear"
 
+----- df - report file system space usage
+df -h
+-h human readable
+
 ----- du
 du
 system app for disk usage 
