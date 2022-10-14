@@ -91,6 +91,7 @@ for_window [class=(?i)bitwarden] focus
 for_window [class=(?i)Solaar] focus
 for_window [class=(?i)discord] focus
 for_window [class=(?i)firefox] focus
+for_window [class=(?i)steam] focus
 
 # ----- transparency --------------------------------------
 
@@ -175,7 +176,7 @@ bar {
     position top
     tray_output none
     status_command ~/.config/bumblebee-status/bumblebee-status -m \
-        pasink weather date time system \
+        weather date time system \
 		-p weather.location="5809902" weather.unit="imperial" memory.usedonly="true" date.format="%a, %B %d, %Y" time.format="%I:%M %p" \
         -t gruvbox-powerline
 }
