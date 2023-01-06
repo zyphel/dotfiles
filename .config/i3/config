@@ -75,7 +75,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # bind program to workspace 
-assign [class="Thunderbird"] $ws4
+assign [class="Thunderbird"] $ws3
 assign [class="(?i)pcmanfm"] $ws4
 assign [class="(?i)bitwarden"] $ws5
 assign [class="obsidian"] $ws5
@@ -87,11 +87,12 @@ assign [class="(?i)firefox"] $ws10
 
 # set auto-focus 
 for_window [class=Thunderbird] focus
+for_window [class=(?i)pcmanfm] focus
 for_window [class=(?i)bitwarden] focus
 for_window [class=(?i)Solaar] focus
 for_window [class=(?i)discord] focus
-for_window [class=(?i)firefox] focus
 for_window [class=(?i)steam] focus
+for_window [class=(?i)firefox] focus
 
 # ----- transparency --------------------------------------
 
