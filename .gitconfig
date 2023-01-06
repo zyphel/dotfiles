@@ -1,0 +1,20 @@
+[user]
+	email = jeff@rustyhinges.com
+	name = Jeff Smith
+	password = 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
+[core]
+	autocrlf = input
+	safecrlf = true
+[init]
+	defaultBranch = master
+[pull]
+    rebase = false
+[credential "https://github.com"]
+	zyphel = zyphel
+[credential]
+	helper = cache --timeout=7889400
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
