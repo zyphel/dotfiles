@@ -73,7 +73,6 @@ bindkey -s '^o' 'nvim $(fzf)^M'
 
 alias ..='cd ..'
 alias ...='cd ../..'
-alias cdd='cd && clear'
 alias cm='cmatrix -u 10'
 alias ct='crontab -e'
 alias aconf='nvim ~/.config/alacritty/alacritty.yml'
