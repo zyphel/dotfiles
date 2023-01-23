@@ -6,7 +6,9 @@ font pango: monospace 10
 
 set $mod Mod1
 
+# ----- window borders ------------------------------------
 # better window borders (from ThePrimeagen)
+
 for_window [class="^.*"] border pixel 3
 # class											border  backgr. text    indicator child_border
 for_window [class="^.*"] client.focused         #77dd77 #285577 #ffffff #2e9ef4   #285577
