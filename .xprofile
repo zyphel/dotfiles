@@ -1,0 +1,6 @@
+setxkbmap us
+nitrogen --restore
+picom &
+dropbox &
+synology-drive &
+setxkbmap -option caps:escape
