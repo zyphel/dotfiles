@@ -204,10 +204,9 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=5),
+                widget.Spacer(length=10),
                 widget.GroupBox(),
                 widget.Prompt(),
-                #widget.WindowName(),
                 widget.Chord(
                     chords_colors={
                         'launch': ('#ff0000', '#ffffff'),
@@ -215,18 +214,22 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Spacer(bar.STRETCH),
-                widget.Volume(),
-                widget.Spacer(length=5),
+                widget.Volume(
+                    foreground='#a89984'),
+                widget.Spacer(length=10),
                 widget.Systray(),
-                widget.Spacer(length=5),
-                widget.Clock(format='%a, %b %d'),
-                widget.Spacer(length=5),
+                widget.Spacer(length=10),
+                widget.Clock(
+                    format='%a, %b %d',
+                    foreground='#a89984'),
+                widget.Spacer(length=10),
                 widget.Clock(format='%I:%M %p'),
-                widget.Spacer(length=5),
-                widget.CurrentLayout(),
-                widget.Spacer(length=5),
+                widget.Spacer(length=10),
+                widget.CurrentLayout(
+                    foreground='#a89984'),
+                widget.Spacer(length=10),
                 widget.QuickExit(),
-                widget.Spacer(length=5),
+                widget.Spacer(length=10),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
