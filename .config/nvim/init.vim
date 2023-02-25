@@ -32,7 +32,7 @@ set wildmenu				" tab autocomplete filenames
 
 autocmd Filetype yaml set cursorcolumn
 autocmd Filetype yml set cursorcolumn
-autocmd Filetype python set cursorcolumn
+"autocmd Filetype python set cursorcolumn
 
 " ----- plugins -----------------------------------------------------
 

@@ -11,43 +11,6 @@ mod = 'mod1'
 terminal = 'alacritty'
 
 keys = [
-#    # A list of available commands that can be bound to keys can be found
-#    # at https://docs.qtile.org/en/latest/manual/config/lazy.html
-#    # Switch between windows
-#    Key([mod], 'h', lazy.layout.left(), 
-#        desc='Move focus to left'),
-#    Key([mod], 'l', lazy.layout.right(), 
-#        desc='Move focus to right'),
-#    Key([mod], 'j', lazy.layout.down(), 
-#        desc='Move focus down'),
-#    Key([mod], 'k', lazy.layout.up(), 
-#        desc='Move focus up'),
-#    Key([mod], 'space', lazy.layout.next(), 
-#        desc='Move window focus to other window'),
-#
-#    # Move windows between left/right columns or move up/down in current stack.
-#    # Moving out of range in Columns layout will create new column.
-#    Key([mod, 'shift'], 'h', lazy.layout.shuffle_left(), 
-#        desc='Move window to the left'),
-#    Key([mod, 'shift'], 'l', lazy.layout.shuffle_right(), 
-#        desc='Move window to the right'),
-#    Key([mod, 'shift'], 'j', lazy.layout.shuffle_down(), 
-#        desc='Move window down'),
-#    Key([mod, 'shift'], 'k', lazy.layout.shuffle_up(), 
-#        desc='Move window up'),
-#
-#    # Grow windows. If current window is on the edge of screen and direction
-#    # will be to screen edge - window would shrink.
-#    Key([mod, 'control'], 'h', lazy.layout.grow_left(), 
-#        desc='Grow window to the left'),
-#    Key([mod, 'control'], 'l', lazy.layout.grow_right(), 
-#        desc='Grow window to the right'),
-#    Key([mod, 'control'], 'j', lazy.layout.grow_down(), 
-#        desc='Grow window down'),
-#    Key([mod, 'control'], 'k', lazy.layout.grow_up(), 
-#        desc='Grow window up'),
-#    Key([mod], 'n', lazy.layout.normalize(), 
-#        desc='Reset all window sizes'),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -73,103 +36,109 @@ keys = [
         desc='Shutdown Qtile'),
     Key([mod], 'r', lazy.spawncmd(), 
         desc='Spawn a command using a prompt widget'),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), 
-        desc="Toggle window fullscreen"),
+    Key([mod], 'f', lazy.window.toggle_fullscreen(), 
+        desc='Toggle window fullscreen'),
 
     # ----- Active Window Actions
-    Key([mod, "control"], "h",
+    Key([mod, 'control'], 'h',
         lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-        desc="Increase active window size."
+        desc='Increase active window size.'
         ),
-    Key([mod, "control"], "Right",
+    Key([mod, 'control'], 'Right',
         lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-        desc="Increase active window size."
+        desc='Increase active window size.'
         ),
-    Key([mod, "control"], "l",
+    Key([mod, 'control'], 'l',
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
-        desc="Decrease active window size."
+        desc='Decrease active window size.'
         ),
-    Key([mod, "control"], "Left",
+    Key([mod, 'control'], 'Left',
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
-        desc="Decrease active window size."
+        desc='Decrease active window size.'
         ),
-    Key([mod, "control"], "k",
+    Key([mod, 'control'], 'k',
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
-        desc="Increase active window size."
+        desc='Increase active window size.'
         ),
-    Key([mod, "control"], "Up",
+    Key([mod, 'control'], 'Up',
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
-        desc="Increase active window size."
+        desc='Increase active window size.'
         ),
-    Key([mod, "control"], "j",
+    Key([mod, 'control'], 'j',
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
-        desc="Decrease active window size."
+        desc='Decrease active window size.'
         ),
-    Key([mod, "control"], "Down",
+    Key([mod, 'control'], 'Down',
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
-        desc="Decrease active window size."
+        desc='Decrease active window size.'
         ),
 
     # ----- Window Focus (Arrows and Vim keys)
-    Key([mod], "Up", lazy.layout.up(),
-        desc="Change focus to window above."),
-    Key([mod], "Down", lazy.layout.down(),
-        desc="Change focus to window below."),
-    Key([mod], "Left", lazy.layout.left(),
-        desc="Change focus to window on the left."),
-    Key([mod], "Right", lazy.layout.right(),
-        desc="Change focus to window on the right."),
-    Key([mod], "k", lazy.layout.up(),
-        desc="Change focus to window above."),
-    Key([mod], "j", lazy.layout.down(),
-        desc="Change focus to window below."),
-    Key([mod], "h", lazy.layout.left(),
-        desc="Change focus to window on the left."),
-    Key([mod], "l", lazy.layout.right(),
-        desc="Change focus to window on the right."),
+    Key([mod], 'Up', lazy.layout.up(),
+        desc='Change focus to window above.'),
+    Key([mod], 'Down', lazy.layout.down(),
+        desc='Change focus to window below.'),
+    Key([mod], 'Left', lazy.layout.left(),
+        desc='Change focus to window on the left.'),
+    Key([mod], 'Right', lazy.layout.right(),
+        desc='Change focus to window on the right.'),
+    Key([mod], 'k', lazy.layout.up(),
+        desc='Change focus to window above.'),
+    Key([mod], 'j', lazy.layout.down(),
+        desc='Change focus to window below.'),
+    Key([mod], 'h', lazy.layout.left(),
+        desc='Change focus to window on the left.'),
+    Key([mod], 'l', lazy.layout.right(),
+        desc='Change focus to window on the right.'),
 
     # ----- Move windows around MonadTall/MonadWide Layouts
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up(),
-        desc="Shuffle window up."),
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down(),
-        desc="Shuffle window down."),
-    Key([mod, "shift"], "Left", lazy.layout.swap_left(),
-        desc="Shuffle window left."),
-    Key([mod, "shift"], "Right", lazy.layout.swap_right(),
-        desc="Shuffle window right."),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(),
-        desc="Shuffle window up."),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
-        desc="Shuffle window down."),
-    Key([mod, "shift"], "h", lazy.layout.swap_left(),
-        desc="Shuffle window left."),
-    Key([mod, "shift"], "l", lazy.layout.swap_right(),
-        desc="Shuffle window right."),
+    Key([mod, 'shift'], 'Up', lazy.layout.shuffle_up(),
+        desc='Shuffle window up.'),
+    Key([mod, 'shift'], 'Down', lazy.layout.shuffle_down(),
+        desc='Shuffle window down.'),
+    Key([mod, 'shift'], 'Left', lazy.layout.swap_left(),
+        desc='Shuffle window left.'),
+    Key([mod, 'shift'], 'Right', lazy.layout.swap_right(),
+        desc='Shuffle window right.'),
+    Key([mod, 'shift'], 'k', lazy.layout.shuffle_up(),
+        desc='Shuffle window up.'),
+    Key([mod, 'shift'], 'j', lazy.layout.shuffle_down(),
+        desc='Shuffle window down.'),
+    Key([mod, 'shift'], 'h', lazy.layout.swap_left(),
+        desc='Shuffle window left.'),
+    Key([mod, 'shift'], 'l', lazy.layout.swap_right(),
+        desc='Shuffle window right.'),
 
     # ----- applications 
 
     Key([mod], 'd', lazy.spawn('rofi -show drun'),
         desc='Run Rofi Launcher'),
+    
+    Key([mod, 'shift'], 'b', lazy.spawn('firefox'),
+        desc='Launch Firefox Browser'),
+
+    Key([mod, 'shift'], 'f', lazy.spawn('pcmanfm'),
+        desc='Launch pcmanfm file browser'),
 
     # ----- enable audio
     Key([], 'XF86AudioMute', lazy.spawn('amixer -q set Master toggle')),
