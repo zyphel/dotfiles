@@ -143,6 +143,9 @@ keys = [
     Key([mod, 'shift'], 'm', lazy.spawn('minecraft-launcher'),
         desc='Launch Minecraft'),
 
+    Key([mod, 'shift'], "v", lazy.spawn("alacritty -e nvim"),
+        desc='Launch Neovim'),
+
     # ----- enable audio
     Key([], 'XF86AudioMute', lazy.spawn('amixer -q set Master toggle')),
     Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer -q sset Master 5%-')),
