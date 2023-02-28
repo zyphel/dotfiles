@@ -131,8 +131,11 @@ keys = [
 
     # ----- applications 
 
-    Key([mod], 'd', lazy.spawn('rofi -show drun'),
+    Key([mod], 'space', lazy.spawn('rofi -show drun'),
         desc='Run Rofi Launcher'),
+
+    Key([mod, 'shift'], 'p', lazy.spawn('rofi -show powermenu:~/.config/rofi/./rofi-power-menu'),
+        desc='Run Rofi Powermenu'),
     
     Key([mod, 'shift'], 'b', lazy.spawn('firefox'),
         desc='Launch Firefox Browser'),
@@ -201,7 +204,7 @@ layouts = [
 
 widget_defaults = dict(
     font='FiraCode Nerd Font',
-    fontsize=12,
+    fontsize=13,
     padding=4,
 )
 extension_defaults = widget_defaults.copy()
