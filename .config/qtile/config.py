@@ -140,6 +140,9 @@ keys = [
     Key([mod, 'shift'], 'f', lazy.spawn('pcmanfm'),
         desc='Launch pcmanfm file browser'),
 
+    Key([mod, 'shift'], 'm', lazy.spawn('minecraft-launcher'),
+        desc='Launch Minecraft'),
+
     # ----- enable audio
     Key([], 'XF86AudioMute', lazy.spawn('amixer -q set Master toggle')),
     Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer -q sset Master 5%-')),
@@ -196,7 +199,7 @@ layouts = [
 widget_defaults = dict(
     font='FiraCode Nerd Font',
     fontsize=12,
-    padding=3,
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -227,7 +230,7 @@ screens = [
                 widget.Spacer(length=10),
                 widget.CurrentLayout(
                     foreground='#a89984'),
-                widget.Spacer(length=10),
+                # widget.Spacer(length=10),
                 widget.QuickExit(),
                 widget.Spacer(length=10),
             ],

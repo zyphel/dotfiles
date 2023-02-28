@@ -1,4 +1,5 @@
 setxkbmap us
+unclutter --jitter 10 --ignore-scrolling --start-hidden --fork
 nitrogen --restore
 picom &
 dropbox &
