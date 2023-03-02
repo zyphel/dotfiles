@@ -134,6 +134,9 @@ keys = [
     Key([mod], 'space', lazy.spawn('rofi -show drun'),
         desc='Run Rofi Launcher'),
 
+    Key([mod, 'shift'], 'space', lazy.spawn('rofi -show window'),
+        desc='Run Rofi Window'),
+
     Key([mod, 'shift'], 'p', lazy.spawn('rofi -show powermenu:~/.config/rofi/./rofi-power-menu'),
         desc='Run Rofi Powermenu'),
     
