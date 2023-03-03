@@ -206,9 +206,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='FiraCode Nerd Font Bold',
+    font='FiraCode Nerd Font',
     fontsize=13,
-    padding=4,
+    padding=8,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -216,8 +216,8 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=10),
-                widget.GroupBox(),
+                widget.Spacer(length=2),
+                widget.GroupBox(padding=3),
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
@@ -226,26 +226,19 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Spacer(bar.STRETCH),
-                widget.Volume(
-                    foreground='#a89984'),
-                widget.Spacer(length=10),
-                widget.Systray(),
-                widget.Spacer(length=10),
+                widget.Volume(foreground='#ebdbb2'),
+                # widget.Systray(),
                 widget.Clock(
-                    format='%a, %b %d',
-                    foreground='#a89984'),
-                widget.Spacer(length=10),
-                widget.Clock(format='%I:%M %p'),
-                widget.Spacer(length=10),
-                widget.CurrentLayout(
-                    foreground='#a89984'),
-                # widget.Spacer(length=10),
-                widget.QuickExit(),
-                widget.Spacer(length=10),
+                    format='%a, %B %d',
+                    foreground='#548588'),
+                widget.Clock(
+                    format='%I:%M %p',
+                    foreground='#ebdbb2'),
+                # widget.CurrentLayout(foreground='#a89984'),
+                widget.QuickExit(foreground='#458588'),
+                widget.Spacer(length=2),
             ],
             24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=['ff00ff', '000000', 'ff00ff', '000000']  # Borders are magenta
         ),
     ),
 ]

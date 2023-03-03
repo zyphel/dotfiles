@@ -67,7 +67,7 @@ lfcd () {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ----- fzf - open file in nvim --------------------------------------
+# ----- fzf - open file in nvim -------------------------------------
 
 bindkey -s '^o' 'nvim $(fzf)^M'
 
