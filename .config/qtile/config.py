@@ -5,6 +5,10 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+# from qtile_extras import widget
+# from qtile_extras.widget.decorations import BorderDecoration
+# from qtile_extras.widget.decorations import PowerLineDecoration
+
 # ----- keybindings -------------------------------------------------
 
 mod = 'mod1'
@@ -185,10 +189,10 @@ for i in groups:
     )
 
 layout_theme = {
-        'margin':8,
-        'border_width':4,
-        'border_focus':'#7c6f64',
-        'border_normal':'#1d2021'
+        'margin':1,
+        'border_focus':'#665c54',
+        'border_normal':'#1d2021',
+        'border_width':2,
         }
 
 layouts = [
@@ -205,19 +209,22 @@ layouts = [
     # layout.Tile(),
 ]
 
+# ----- bar and widgets ---------------------------------------------
+
 widget_defaults = dict(
     font='FiraCode Nerd Font',
-    fontsize=13,
+    fontsize=14,
     padding=8,
 )
+
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length=2),
-                widget.GroupBox(padding=3),
+                widget.Spacer(length = 2),
+                widget.GroupBox(padding = 3),
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
@@ -226,19 +233,21 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Spacer(bar.STRETCH),
-                widget.Volume(foreground='#ebdbb2'),
+                widget.Clock(
+                    format = '%I:%M %p',
+                    foreground = '#bdae93'),
+                widget.Spacer(bar.STRETCH),
+                widget.Volume(foreground = '#bdae93'),
                 # widget.Systray(),
                 widget.Clock(
-                    format='%a, %B %d',
-                    foreground='#548588'),
-                widget.Clock(
-                    format='%I:%M %p',
-                    foreground='#ebdbb2'),
+                    format = '%A, %B %d',
+                    foreground = '#bdae93'),
                 # widget.CurrentLayout(foreground='#a89984'),
-                widget.QuickExit(foreground='#458588'),
-                widget.Spacer(length=2),
+                widget.QuickExit(foreground = '#bdae93'),
+                widget.Spacer(length = 2),
             ],
             24,
+            # background = '#0e0e0e',
         ),
     ),
 ]
