@@ -241,7 +241,7 @@ screens = [
                     background = '1d2021',
                     foreground = 'bdae93',
                     highlight_method = 'line',
-                    highlight_color = '282828',
+                    highlight_color = '#3c3836',
                     padding = 3,
                     **powerline),
                 widget.Prompt(),
