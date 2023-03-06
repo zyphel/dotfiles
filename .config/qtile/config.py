@@ -8,6 +8,7 @@ from libqtile.utils import guess_terminal
 # ----- replaces 'from libqtile import widget' from above
 from qtile_extras import widget
 
+# ----- qtile-extras decorations
 from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget.decorations import PowerLineDecoration
 
@@ -237,50 +238,49 @@ screens = [
             [
                 widget.Spacer(length = 2),
                 widget.GroupBox(
-                    background = '#1d2021',
+                    background = '1d2021',
+                    foreground = 'bdae93',
                     highlight_method = 'line',
-                    highlight_color = '#282828',
+                    highlight_color = '282828',
                     padding = 3,
                     **powerline),
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
-                        'launch': ('#ff0000', '#ffffff'),
+                        'launch': ('ff0000', 'ffffff'),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Spacer(
                     bar.STRETCH,
-                    background = '#282828',
+                    background = '282828',
                     **powerline),
                 widget.TextBox(
-                    background = '#282828',
+                    background = '282828',
                     **powerline),
                 widget.Systray(                    
-                    background = '#1d2021', 
+                    background = '1d2021', 
                     **powerline),
-                # widget.TextBox(**powerline),
                 widget.Volume(
-                    background = '#282828',
-                    foreground = '#bdae93',
+                    background = '282828',
+                    foreground = 'bdae93',
                     **powerline),
                 widget.Clock(
                     format = '%A, %B %d',
-                    background = '#1d2021', 
-                    foreground = '#bdae93',
+                    background = '1d2021', 
+                    foreground = 'bdae93',
                     **powerline),
                 widget.Clock(format = '%I:%M %p',
-                    background = '#282828',
-                    foreground = '#bdae93',
+                    background = '282828',
+                    foreground = 'bdae93',
                     **powerline),
-                # widget.CurrentLayout(foreground='#665c54'),
+                # widget.CurrentLayout(foreground='665c54'),
                 widget.QuickExit(
-                    background = '#1d2021',
-                    foreground = '#bdae93',),
+                    background = '1d2021',
+                    foreground = 'bdae93',),
                 widget.Spacer(length = 2),
             ],
             24,
-            # background = '#0e0e0e',
         ),
     ),
 ]
