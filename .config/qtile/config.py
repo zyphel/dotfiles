@@ -236,7 +236,12 @@ screens = [
         top=bar.Bar(
             [
                 widget.Spacer(length = 2),
-                widget.GroupBox(padding = 3),
+                widget.GroupBox(
+                    background = '#1d2021',
+                    highlight_method = 'line',
+                    highlight_color = '#282828',
+                    padding = 3,
+                    **powerline),
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
@@ -244,30 +249,34 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Spacer(bar.STRETCH),
-                widget.TextBox(**powerline),
+                widget.Spacer(
+                    bar.STRETCH,
+                    background = '#282828',
+                    **powerline),
+                widget.TextBox(
+                    background = '#282828',
+                    **powerline),
                 widget.Systray(                    
-                    background = '#282828', 
-                    foreground = '#928374', 
+                    background = '#1d2021', 
                     **powerline),
                 # widget.TextBox(**powerline),
                 widget.Volume(
-                    background = '#928374',
-                    foreground = '#282828',
+                    background = '#282828',
+                    foreground = '#bdae93',
                     **powerline),
                 widget.Clock(
                     format = '%A, %B %d',
-                    background = '#282828', 
-                    foreground = '#928374', 
+                    background = '#1d2021', 
+                    foreground = '#bdae93',
                     **powerline),
                 widget.Clock(format = '%I:%M %p',
-                    background = '#928374',
-                    foreground = '#282828',
-                    **powerline),
-                # widget.CurrentLayout(foreground='#928374'),
-                widget.QuickExit(
                     background = '#282828',
-                    foreground = '#928374'),
+                    foreground = '#bdae93',
+                    **powerline),
+                # widget.CurrentLayout(foreground='#665c54'),
+                widget.QuickExit(
+                    background = '#1d2021',
+                    foreground = '#bdae93',),
                 widget.Spacer(length = 2),
             ],
             24,
