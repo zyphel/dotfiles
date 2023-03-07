@@ -5,7 +5,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-# ----- replaces 'from libqtile import widget' from above
+# ----- replaces 'from libqtile.config widget' from above
 from qtile_extras import widget
 
 # ----- qtile-extras decorations
@@ -159,7 +159,9 @@ keys = [
     Key([mod, 'shift'], "v", lazy.spawn("alacritty -e nvim"),
         desc = 'Launch Neovim'),
 
-    # ----- enable audio
+# ----- screenshots
+
+# ----- enable audio
     Key([], 'XF86AudioMute', lazy.spawn('amixer -q set Master toggle')),
     Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer -q sset Master 5%-')),
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('amixer -q sset Master 5%+')),
@@ -224,7 +226,6 @@ powerline = {
 # ----- bar and widgets ---------------------------------------------
 
 widget_defaults = dict(
-    # font = 'Source Code Pro',
     font = 'FiraCode Nerd Font',
     fontsize = 15,
     padding = 8,
@@ -280,7 +281,7 @@ screens = [
                     foreground = 'bdae93',),
                 widget.Spacer(length = 2),
             ],
-            24,
+            22,
         ),
     ),
 ]

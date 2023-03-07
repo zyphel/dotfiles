@@ -1,7 +1,9 @@
 setxkbmap us
+setxkbmap -option caps:escape
 unclutter --jitter 10 --ignore-scrolling --start-hidden --fork
 nitrogen --restore
 picom &
+protonmail-bridge &
 synology-drive &
 dropbox &
-setxkbmap -option caps:escape
+solaar &
