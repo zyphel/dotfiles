@@ -214,7 +214,7 @@ layouts = [
     # layout.Tile(),
 ]
 
-# ----- powerline
+# ----- call powerline from qtile-extras
 
 powerline = {
     "decorations": [
