@@ -239,12 +239,14 @@ screens = [
             [
                 widget.Spacer(length = 2),
                 widget.GroupBox(
+                    **powerline,
+                    active = 'bdae93',
                     background = '1d2021',
-                    foreground = 'bdae93',
-                    highlight_method = 'line',
-                    highlight_color = '#3c3836',
-                    padding = 3,
-                    **powerline),
+                    block_highlight_text_color = '689d6a',
+                    hide_unused = 'true',
+                    highlight_method = 'block',
+                    # inactive = '282828',
+                    padding = 3),
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
