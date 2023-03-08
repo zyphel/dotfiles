@@ -3,9 +3,9 @@
 export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
 
-pfetch
+# pfetch
 
-# neofetch --source ~/Documents/neofetch.ascii
+neofetch --source ~/.config/backgrounds/neofetch.ascii
 
 # Ignore case completion
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
