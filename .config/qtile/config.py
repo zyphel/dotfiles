@@ -32,21 +32,28 @@ keys = [
     Key([mod], 'Return', lazy.spawn(terminal), 
         desc = 'Launch terminal'),
 
-    # ----- Qtile layout actions
+# ----- Qtile layout actions
+
     Key([mod], 'Tab', lazy.next_layout(), 
         desc = 'Toggle between layouts'),
+
     Key([mod], 'w', lazy.window.kill(), 
         desc = 'Kill focused window'),
+
     Key([mod, 'control'], 'r', lazy.reload_config(), 
         desc = 'Reload the config'),
+
     Key([mod, 'control'], 'q', lazy.shutdown(), 
         desc = 'Shutdown Qtile'),
+
     Key([mod], 'r', lazy.spawncmd(), 
         desc = 'Spawn a command using a prompt widget'),
+
     Key([mod], 'f', lazy.window.toggle_fullscreen(), 
         desc = 'Toggle window fullscreen'),
 
-    # ----- Active Window Actions
+# ----- Active Window Actions
+
     Key([mod, 'control'], 'h',
         lazy.layout.grow_right(),
         lazy.layout.grow(),
@@ -54,6 +61,7 @@ keys = [
         lazy.layout.delete(),
         desc = 'Increase active window size.'
         ),
+
     Key([mod, 'control'], 'Right',
         lazy.layout.grow_right(),
         lazy.layout.grow(),
@@ -61,6 +69,7 @@ keys = [
         lazy.layout.delete(),
         desc = 'Increase active window size.'
         ),
+
     Key([mod, 'control'], 'l',
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
@@ -68,6 +77,7 @@ keys = [
         lazy.layout.add(),
         desc = 'Decrease active window size.'
         ),
+
     Key([mod, 'control'], 'Left',
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
@@ -75,24 +85,28 @@ keys = [
         lazy.layout.add(),
         desc = 'Decrease active window size.'
         ),
+
     Key([mod, 'control'], 'k',
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
         desc = 'Increase active window size.'
         ),
+
     Key([mod, 'control'], 'Up',
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
         desc = 'Increase active window size.'
         ),
+
     Key([mod, 'control'], 'j',
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
         desc = 'Decrease active window size.'
         ),
+
     Key([mod, 'control'], 'Down',
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
@@ -100,43 +114,59 @@ keys = [
         desc = 'Decrease active window size.'
         ),
 
-    # ----- Window Focus (Arrows and Vim keys)
+# ----- Window Focus (Arrows and Vim keys)
+
     Key([mod], 'Up', lazy.layout.up(),
         desc = 'Change focus to window above.'),
+
     Key([mod], 'Down', lazy.layout.down(),
         desc = 'Change focus to window below.'),
+
     Key([mod], 'Left', lazy.layout.left(),
         desc = 'Change focus to window on the left.'),
+
     Key([mod], 'Right', lazy.layout.right(),
         desc = 'Change focus to window on the right.'),
+
     Key([mod], 'k', lazy.layout.up(),
         desc = 'Change focus to window above.'),
+
     Key([mod], 'j', lazy.layout.down(),
         desc = 'Change focus to window below.'),
+
     Key([mod], 'h', lazy.layout.left(),
         desc = 'Change focus to window on the left.'),
+
     Key([mod], 'l', lazy.layout.right(),
         desc = 'Change focus to window on the right.'),
 
-    # ----- Move windows around MonadTall/MonadWide Layouts
+# ----- Move windows around MonadTall/MonadWide Layouts
+
     Key([mod, 'shift'], 'Up', lazy.layout.shuffle_up(),
         desc = 'Shuffle window up.'),
+    
     Key([mod, 'shift'], 'Down', lazy.layout.shuffle_down(),
         desc = 'Shuffle window down.'),
+
     Key([mod, 'shift'], 'Left', lazy.layout.swap_left(),
         desc = 'Shuffle window left.'),
+
     Key([mod, 'shift'], 'Right', lazy.layout.swap_right(),
         desc = 'Shuffle window right.'),
+
     Key([mod, 'shift'], 'k', lazy.layout.shuffle_up(),
         desc = 'Shuffle window up.'),
+
     Key([mod, 'shift'], 'j', lazy.layout.shuffle_down(),
         desc = 'Shuffle window down.'),
+
     Key([mod, 'shift'], 'h', lazy.layout.swap_left(),
         desc = 'Shuffle window left.'),
+
     Key([mod, 'shift'], 'l', lazy.layout.swap_right(),
         desc = 'Shuffle window right.'),
 
-    # ----- applications 
+# ----- applications 
 
     Key([mod], 'space', lazy.spawn('rofi -show drun'),
         desc = 'Run Rofi Launcher'),
@@ -156,12 +186,18 @@ keys = [
     Key([mod, 'shift'], 'm', lazy.spawn('minecraft-launcher'),
         desc = 'Launch Minecraft'),
 
+    Key([mod, 'shift'], 'e', lazy.spawn('steam'),
+        desc = 'Launch Steam'),
+
     Key([mod, 'shift'], "v", lazy.spawn("alacritty -e nvim"),
         desc = 'Launch Neovim'),
 
 # ----- screenshots
 
+Key([], "Print", lazy.spawn("scrot /home/jeff/Pictures/")),
+
 # ----- enable audio
+
     Key([], 'XF86AudioMute', lazy.spawn('amixer -q set Master toggle')),
     Key([], 'XF86AudioLowerVolume', lazy.spawn('amixer -q sset Master 5%-')),
     Key([], 'XF86AudioRaiseVolume', lazy.spawn('amixer -q sset Master 5%+')),
@@ -172,32 +208,32 @@ groups = [Group(i) for i in '123456789']
 for i in groups:
     keys.extend(
         [
-            # mod + letter of group = switch to group
+# mod + letter of group = switch to group
             Key(
                 [mod],
                 i.name,
                 lazy.group[i.name].toscreen(),
                 desc = 'Switch to group {}'.format(i.name),
             ),
-            # mod + shift + letter of group = switch to & move focused window to group
+# mod + shift + letter of group = switch to & move focused window to group
             Key(
                 [mod, 'shift'],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
                 desc = 'Switch to & move focused window to group {}'.format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, 'shift'], i.name, lazy.window.togroup(i.name),
-            #     desc = 'move focused window to group {}'.format(i.name)),
+# Or, use below if you prefer not to switch to that group.
+# # mod1 + shift + letter of group = move focused window to group
+# Key([mod, 'shift'], i.name, lazy.window.togroup(i.name),
+#     desc = 'move focused window to group {}'.format(i.name)),
         ]
     )
 
 layout_theme = {
-        'margin':1,
+        'margin':10,
         'border_focus':'#665c54',
         'border_normal':'#1d2021',
-        'border_width':2,
+        'border_width':4,
         }
 
 layouts = [
