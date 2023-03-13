@@ -230,10 +230,10 @@ for i in groups:
     )
 
 layout_theme = {
-        'margin':10,
+        'margin':1,
         'border_focus':'#665c54',
         'border_normal':'#1d2021',
-        'border_width':4,
+        'border_width':2,
         }
 
 layouts = [
@@ -255,6 +255,7 @@ layouts = [
 powerline = {
     "decorations": [
         # PowerLineDecoration(path = 'arrow_right')
+        # PowerLineDecoration(path = 'back_slash')
         PowerLineDecoration(path = 'forward_slash')
     ]
 }
@@ -263,7 +264,7 @@ powerline = {
 
 widget_defaults = dict(
     font = 'FiraCode Nerd Font',
-    fontsize = 15,
+    fontsize = 14,
     padding = 8,
 )
 
@@ -290,6 +291,10 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                #widget.CurrentLayout(
+                #    background='1d2021',
+                #    foreground='bdae93',
+                #    **powerline),
                 widget.Spacer(
                     bar.STRETCH,
                     background = '282828',
@@ -313,7 +318,6 @@ screens = [
                     background = '282828',
                     foreground = 'bdae93',
                     **powerline),
-                # widget.CurrentLayout(foreground='665c54'),
                 widget.QuickExit(
                     background = '1d2021',
                     foreground = 'bdae93',),
@@ -333,7 +337,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
