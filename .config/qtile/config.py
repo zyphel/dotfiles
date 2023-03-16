@@ -19,10 +19,6 @@ terminal = 'alacritty'
 
 keys = [
 
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
     Key(
         [mod, 'shift'],
         'Return',
@@ -233,7 +229,7 @@ layout_theme = {
         'margin':1,
         'border_focus':'#665c54',
         'border_normal':'#1d2021',
-        'border_width':2,
+        'border_width':3,
         }
 
 layouts = [
@@ -265,7 +261,7 @@ powerline = {
 widget_defaults = dict(
     font = 'FiraCode Nerd Font',
     fontsize = 14,
-    padding = 8,
+    padding = 12,
 )
 
 extension_defaults = widget_defaults.copy()
@@ -277,9 +273,9 @@ screens = [
                 widget.Spacer(length = 2),
                 widget.GroupBox(
                     **powerline,
-                    active = 'bdae93',
-                    background = '1d2021',
-                    block_highlight_text_color = '689d6a',
+                    active = '#bdae93',
+                    background = '#1d2021',
+                    block_highlight_text_color = '#689d6a',
                     hide_unused = 'true',
                     highlight_method = 'block',
                     # inactive = '282828',
@@ -287,7 +283,7 @@ screens = [
                 widget.Prompt(),
                 widget.Chord(
                     chords_colors={
-                        'launch': ('ff0000', 'ffffff'),
+                        'launch': ('#ff0000', '#ffffff'),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
@@ -297,30 +293,30 @@ screens = [
                 #    **powerline),
                 widget.Spacer(
                     bar.STRETCH,
-                    background = '282828',
+                    background = '#282828',
                     **powerline),
                 widget.TextBox(
-                    background = '282828',
+                    background = '#282828',
                     **powerline),
                 widget.Systray(                    
-                    background = '1d2021', 
+                    background = '#1d2021', 
                     **powerline),
                 widget.Volume(
-                    background = '282828',
-                    foreground = 'bdae93',
+                    background = '#282828',
+                    foreground = '#bdae93',
                     **powerline),
                 widget.Clock(
                     format = '%A, %B %d',
-                    background = '1d2021', 
-                    foreground = 'bdae93',
+                    background = '#1d2021', 
+                    foreground = '#bdae93',
                     **powerline),
                 widget.Clock(format = '%I:%M %p',
-                    background = '282828',
-                    foreground = 'bdae93',
+                    background = '#282828',
+                    foreground = '#bdae93',
                     **powerline),
                 widget.QuickExit(
-                    background = '1d2021',
-                    foreground = 'bdae93',),
+                    background = '#1d2021',
+                    foreground = '#bdae93',),
                 widget.Spacer(length = 2),
             ],
             22,
