@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{icon} {name}";
-  font: "FiraCode Nerd Font Regular 11";
+  font: "FiraCode Nerd Font Regular 12";
   modi: "window,run,drun";
   show-icons: true;
   icon-theme: "Papyrus";
