@@ -5,8 +5,8 @@ export EDITOR=/usr/bin/nvim
 
 # pfetch
 
-neofetch --color_blocks off --source ~/Documents/yamaha_sm.ascii
-# neofetch --source ~/.config/backgrounds/neofetch.ascii
+# neofetch --color_blocks off --source ~/Documents/yamaha_sm.ascii
+neofetch --source ~/.config/backgrounds/guitar-10.ascii
 
 # Ignore case completion
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
