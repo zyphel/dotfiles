@@ -259,7 +259,7 @@ powerline = {
 # ----- bar and widgets ---------------------------------------------
 
 widget_defaults = dict(
-    font = 'FiraCode Nerd Font Bold',
+    font = 'FiraCode Nerd Font',
     fontsize = 14,
     padding = 8,
 )
