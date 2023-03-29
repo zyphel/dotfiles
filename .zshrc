@@ -3,10 +3,9 @@
 export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
 
-# pfetch
-
+pfetch
 # neofetch --color_blocks off --source ~/Documents/yamaha_sm.ascii
-neofetch --source ~/.config/backgrounds/guitar-10.ascii
+# neofetch --source ~/.config/backgrounds/guitar-10.ascii 
 
 # Ignore case completion
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
@@ -76,7 +75,9 @@ bindkey -s '^o' 'nvim $(fzf)^M'
 
 alias ..='cd ..'
 alias ...='cd ../..'
-alias cm='cmatrix -u 10'
+alias cdd='cd && clear'
+alias cm='cmatrix -a -u 10'
+alias cmatrix='cmatrix -a'
 alias ct='crontab -e'
 alias aconf='nvim ~/.config/alacritty/alacritty.yml'
 alias btm='btm --color gruvbox'
@@ -87,7 +88,7 @@ alias ff='fastfetch'
 alias hcd='cd ~/zyphel && hugo server -D'
 alias latex='cd ~/Dropbox/LaTeX'
 alias lf='lfcd'
-alias ll='ls -lah'
+alias ll='ls -lAh'
 alias ls='ls --color=auto'
 alias lsblk='lsblk -e 7'
 alias n='cd ~/Dropbox/NOTES'
@@ -101,6 +102,7 @@ alias update='yay'
 alias v='nvim'
 alias vbib='nvim ~/Dropbox/LaTeX/references.bib'
 alias vfe='nvim ~/Dropbox/LaTeX/fe-draft/fe-draft.tex'
+alias vim='nvim'
 alias vjrnl='nvim ~/Dropbox/jrnl/journal.txt'
 alias vtasks='nvim ~/Dropbox/TASKS/todo.txt'
 
