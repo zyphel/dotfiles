@@ -3,9 +3,9 @@
 export TERMINAL=alacritty
 export EDITOR=/usr/bin/nvim
 
-pfetch
+# pfetch
 # neofetch --color_blocks off --source ~/Documents/yamaha_sm.ascii
-# neofetch --source ~/.config/backgrounds/guitar-10.ascii 
+neofetch func_name --source ~/.config/backgrounds/guitar-10.ascii --disable cpu gpu icons kernel memory packages resolution theme uptime
 
 # Ignore case completion
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 
@@ -92,8 +92,6 @@ alias ll='ls -lAh'
 alias ls='ls --color=auto'
 alias lsblk='lsblk -e 7'
 alias n='cd ~/Dropbox/NOTES'
-alias neofetch='neofetch --source ~/Documents/neofetch.ascii'
-alias nf='neofetch --source ~/Documents/neofetch.ascii'
 alias q='exit'
 alias rg='rg -S'
 alias rm='rm -i'	# make rm safe - will ask are you sure?
