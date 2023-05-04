@@ -6,9 +6,11 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 # ----- replaces 'from libqtile.config widget' from above
+
 from qtile_extras import widget
 
 # ----- qtile-extras decorations
+
 from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget.decorations import PowerLineDecoration
 
@@ -226,10 +228,10 @@ for i in groups:
     )
 
 layout_theme = {
-        'margin':1,
-        'border_focus':'#665c54',
+        'margin':0,
+        'border_focus':'#504945',
         'border_normal':'#1d2021',
-        'border_width':3,
+        'border_width':1,
         }
 
 layouts = [
